@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hexun.zh.datafilter.mapper.FeedbackMapper" >
+  <resultMap id="BaseResultMap" type="com.hexun.zh.datafilter.entity.Feedback" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="FEEDBACK_TIME" property="feedbackTime" jdbcType="TIMESTAMP" />
+    <result column="DEVICE_NAME" property="deviceName" jdbcType="VARCHAR" />
+    <result column="PLATFORM" property="platform" jdbcType="VARCHAR" />
+    <result column="CLIENT_VERSION" property="clientVersion" jdbcType="VARCHAR" />
+    <result column="EMAIL" property="email" jdbcType="VARCHAR" />
+    <result column="PHONE" property="phone" jdbcType="VARCHAR" />
+    <result column="FEEDBACK_TYPE" property="feedbackType" jdbcType="VARCHAR" />
+    <result column="MEMO" property="memo" jdbcType="VARCHAR" />
+    <result column="ANSWER_TYPE" property="answerType" jdbcType="VARCHAR" />
+    <result column="MESSAGE" property="message" jdbcType="VARCHAR" />
+    <result column="IP" property="ip" jdbcType="VARCHAR" />
+    <result column="UA" property="ua" jdbcType="VARCHAR" />
+    <result column="PROVINCE" property="province" jdbcType="VARCHAR" />
+    <result column="PHONE_OPERATOR" property="phoneOperator" jdbcType="VARCHAR" />
+    <result column="INSTALL_CANNEL" property="installCannel" jdbcType="VARCHAR" />
+    <result column="IS_HANDLE" property="isHandle" jdbcType="VARCHAR" />
+    <result column="OPERATOR" property="operator" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="EXTENSION" property="extension" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, FEEDBACK_TIME, DEVICE_NAME, PLATFORM, CLIENT_VERSION, EMAIL, PHONE, FEEDBACK_TYPE, 
+    MEMO, ANSWER_TYPE, MESSAGE, IP, UA, PROVINCE, PHONE_OPERATOR, INSTALL_CANNEL, IS_HANDLE, 
+    OPERATOR, CREATE_TIME, EXTENSION
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from feedback
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from feedback
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.hexun.zh.datafilter.entity.Feedback" >
+    insert into feedback (ID, FEEDBACK_TIME, DEVICE_NAME, 
+      PLATFORM, CLIENT_VERSION, EMAIL, 
+      PHONE, FEEDBACK_TYPE, MEMO, 
+      ANSWER_TYPE, MESSAGE, IP, 
+      UA, PROVINCE, PHONE_OPERATOR, 
+      INSTALL_CANNEL, IS_HANDLE, OPERATOR, 
+      CREATE_TIME, EXTENSION)
+    values (#{id,jdbcType=VARCHAR}, #{feedbackTime,jdbcType=TIMESTAMP}, #{deviceName,jdbcType=VARCHAR}, 
+      #{platform,jdbcType=VARCHAR}, #{clientVersion,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{feedbackType,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR}, 
+      #{answerType,jdbcType=VARCHAR}, #{message,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, 
+      #{ua,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, #{phoneOperator,jdbcType=VARCHAR}, 
+      #{installCannel,jdbcType=VARCHAR}, #{isHandle,jdbcType=VARCHAR}, #{operator,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{extension,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hexun.zh.datafilter.entity.Feedback" >
+    insert into feedback
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="feedbackTime != null" >
+        FEEDBACK_TIME,
+      </if>
+      <if test="deviceName != null" >
+        DEVICE_NAME,
+      </if>
+      <if test="platform != null" >
+        PLATFORM,
+      </if>
+      <if test="clientVersion != null" >
+        CLIENT_VERSION,
+      </if>
+      <if test="email != null" >
+        EMAIL,
+      </if>
+      <if test="phone != null" >
+        PHONE,
+      </if>
+      <if test="feedbackType != null" >
+        FEEDBACK_TYPE,
+      </if>
+      <if test="memo != null" >
+        MEMO,
+      </if>
+      <if test="answerType != null" >
+        ANSWER_TYPE,
+      </if>
+      <if test="message != null" >
+        MESSAGE,
+      </if>
+      <if test="ip != null" >
+        IP,
+      </if>
+      <if test="ua != null" >
+        UA,
+      </if>
+      <if test="province != null" >
+        PROVINCE,
+      </if>
+      <if test="phoneOperator != null" >
+        PHONE_OPERATOR,
+      </if>
+      <if test="installCannel != null" >
+        INSTALL_CANNEL,
+      </if>
+      <if test="isHandle != null" >
+        IS_HANDLE,
+      </if>
+      <if test="operator != null" >
+        OPERATOR,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="extension != null" >
+        EXTENSION,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="feedbackTime != null" >
+        #{feedbackTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deviceName != null" >
+        #{deviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="platform != null" >
+        #{platform,jdbcType=VARCHAR},
+      </if>
+      <if test="clientVersion != null" >
+        #{clientVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="feedbackType != null" >
+        #{feedbackType,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null" >
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="answerType != null" >
+        #{answerType,jdbcType=VARCHAR},
+      </if>
+      <if test="message != null" >
+        #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null" >
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="ua != null" >
+        #{ua,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneOperator != null" >
+        #{phoneOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="installCannel != null" >
+        #{installCannel,jdbcType=VARCHAR},
+      </if>
+      <if test="isHandle != null" >
+        #{isHandle,jdbcType=VARCHAR},
+      </if>
+      <if test="operator != null" >
+        #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="extension != null" >
+        #{extension,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hexun.zh.datafilter.entity.Feedback" >
+    update feedback
+    <set >
+      <if test="feedbackTime != null" >
+        FEEDBACK_TIME = #{feedbackTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deviceName != null" >
+        DEVICE_NAME = #{deviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="platform != null" >
+        PLATFORM = #{platform,jdbcType=VARCHAR},
+      </if>
+      <if test="clientVersion != null" >
+        CLIENT_VERSION = #{clientVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        PHONE = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="feedbackType != null" >
+        FEEDBACK_TYPE = #{feedbackType,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null" >
+        MEMO = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="answerType != null" >
+        ANSWER_TYPE = #{answerType,jdbcType=VARCHAR},
+      </if>
+      <if test="message != null" >
+        MESSAGE = #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null" >
+        IP = #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="ua != null" >
+        UA = #{ua,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        PROVINCE = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneOperator != null" >
+        PHONE_OPERATOR = #{phoneOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="installCannel != null" >
+        INSTALL_CANNEL = #{installCannel,jdbcType=VARCHAR},
+      </if>
+      <if test="isHandle != null" >
+        IS_HANDLE = #{isHandle,jdbcType=VARCHAR},
+      </if>
+      <if test="operator != null" >
+        OPERATOR = #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="extension != null" >
+        EXTENSION = #{extension,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hexun.zh.datafilter.entity.Feedback" >
+    update feedback
+    set FEEDBACK_TIME = #{feedbackTime,jdbcType=TIMESTAMP},
+      DEVICE_NAME = #{deviceName,jdbcType=VARCHAR},
+      PLATFORM = #{platform,jdbcType=VARCHAR},
+      CLIENT_VERSION = #{clientVersion,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      FEEDBACK_TYPE = #{feedbackType,jdbcType=VARCHAR},
+      MEMO = #{memo,jdbcType=VARCHAR},
+      ANSWER_TYPE = #{answerType,jdbcType=VARCHAR},
+      MESSAGE = #{message,jdbcType=VARCHAR},
+      IP = #{ip,jdbcType=VARCHAR},
+      UA = #{ua,jdbcType=VARCHAR},
+      PROVINCE = #{province,jdbcType=VARCHAR},
+      PHONE_OPERATOR = #{phoneOperator,jdbcType=VARCHAR},
+      INSTALL_CANNEL = #{installCannel,jdbcType=VARCHAR},
+      IS_HANDLE = #{isHandle,jdbcType=VARCHAR},
+      OPERATOR = #{operator,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      EXTENSION = #{extension,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+  <!-- 分页查询所有属性 -->
+  <select id="findDataByPage" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from feedback
+    where 1=1
+
+    order by create_time desc
+    <!-- 分页 -->
+    <if test="page_sql != null and page_sql !=''"  >
+      ${page_sql}
+    </if>
+  </select>
+
+  <!-- 线形图数据 -->
+  <select id="loadLineChat" resultType="java.util.HashMap">
+
+    SELECT
+    DATE_FORMAT(FEEDBACK_TIME,'%Y-%m-%d') feedbackTime,
+    count(*) count
+    FROM
+    feedback
+    WHERE
+    1 = 1
+    <if test="startTime != null" >
+      AND FEEDBACK_TIME &gt;= #{startTime}
+    </if>
+    <if test="endTime != null" >
+      AND FEEDBACK_TIME &lt;= #{endTime}
+    </if>
+    <if test="feedbackType != null" >
+      AND FEEDBACK_TYPE = #{feedbackType}
+    </if>
+    GROUP BY
+    FEEDBACK_TIME
+  </select>
+
+  <!-- 条形图数据 -->
+  <select id="loadBarChat" resultType="java.util.HashMap">
+    SELECT
+    DATE_FORMAT(FEEDBACK_TIME,'%Y-%m-%d') feedbackTime,
+    FEEDBACK_TYPE feedbackType,
+    count(*) count
+    FROM
+    feedback
+    WHERE
+    1 = 1
+    <if test="startTime != null" >
+      AND FEEDBACK_TIME &gt;= #{startTime}
+    </if>
+    <if test="endTime != null" >
+      AND FEEDBACK_TIME &lt;= #{endTime}
+    </if>
+    GROUP BY
+    FEEDBACK_TIME,FEEDBACK_TYPE
+    ORDER BY
+    FEEDBACK_TIME ASC
+  </select>
+
+  <!-- 饼图数据 -->
+  <select id="loadPieChat" resultType="java.util.LinkedHashMap">
+    SELECT
+    FEEDBACK_TYPE label,
+    count(*) value
+    FROM
+    feedback
+    WHERE
+    1 = 1
+    <if test="startTime != null" >
+      AND FEEDBACK_TIME &gt;= #{startTime}
+    </if>
+    <if test="endTime != null" >
+      AND FEEDBACK_TIME &lt;= #{endTime}
+    </if>
+    GROUP BY
+    FEEDBACK_TYPE
+  </select>
+</mapper>

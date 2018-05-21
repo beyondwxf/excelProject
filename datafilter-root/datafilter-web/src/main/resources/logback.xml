@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true" scanPeriod="30 seconds" debug="false">
+	<contextName>jsapi</contextName>
+	<property name="logRoot" value="/home/tomcat/logs/datafilter" />
+	
+	<!-- 控制台输出日志 -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder charset="UTF-8" />
+			<layout class="ch.qos.logback.classic.PatternLayout">
+				<pattern>%d{MM-dd HH:mm:ss} %-5level %logger{36} >>> %msg%n</pattern>
+			</layout>
+	</appender>
+	
+	<!--每天生成一个日志文件，保存30天的日志文件。 -->
+	<appender name="BASE_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder charset="UTF-8" />
+		<file>${logRoot}/datafilter.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logRoot}/datafilter.log.%d{yyyy-MM-dd}</fileNamePattern>
+			<!--<maxHistory>90</maxHistory>-->
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{36} [%thread] - %msg%n</Pattern>
+			<charset>UTF-8</charset> <!-- 此处设置字符集 -->
+		</layout>
+	</appender>
+	
+	<!-- 第二个日志文件 -->
+	<appender name="DAO_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder charset="UTF-8" />
+		<file>${logRoot}/datafilter_dao.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logRoot}/datafilter_dao.log.%d{yyyy-MM-dd}</fileNamePattern>
+			<!--<maxHistory>90</maxHistory>-->
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{36} [%thread] - %msg%n</Pattern>
+			<charset>UTF-8</charset> <!-- 此处设置字符集 -->
+		</layout>
+	</appender>
+
+	<!-- 回调日志文件 -->
+	<appender name="NOTIFY_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder charset="UTF-8" />
+		<file>${logRoot}/datafilter_notify.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logRoot}/datafilter_notify.log.%d{yyyy-MM-dd}</fileNamePattern>
+			<!--<maxHistory>90</maxHistory>-->
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{36} [%thread] - %msg%n</Pattern>
+			<charset>UTF-8</charset> <!-- 此处设置字符集 -->
+		</layout>
+	</appender>
+	
+	<appender name="ERROR-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder charset="UTF-8" />
+		<file>${logRoot}/error.log</file>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logRoot}/error.log.%d{yyyy-MM-dd}</fileNamePattern>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</Pattern>
+		</layout>
+	</appender>
+	
+
+	<!--指定logger name为包名或类全名 指定级别 additivity设置是否传递到root logger -->
+	<!-- <logger name="slf4j" level="INFO" additivity="false"> -->
+	<logger name="com" level="INFO" additivity="false">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="BASE_LOG" /><!-- 第一个日志文件 -->
+		<appender-ref ref="ERROR-APPENDER" />
+	</logger>
+	<logger name="com.hexun.zh.datafilter.mapper" level="DEBUG" additivity="false">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="DAO_LOG" /><!-- 第二个日志文件 -->
+		<appender-ref ref="ERROR-APPENDER" />
+	</logger>
+
+	<!--slf4j2包下的类在ERROR级别时候传递到root logger中 -->
+	<logger name="slf4j2" level="INFO" />
+
+	<!--根logger控制 -->
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="BASE_LOG" />
+		<appender-ref ref="ERROR-APPENDER" />
+	</root>
+</configuration>
