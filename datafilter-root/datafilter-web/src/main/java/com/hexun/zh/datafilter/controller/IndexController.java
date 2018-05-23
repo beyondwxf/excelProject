@@ -56,6 +56,18 @@ public class IndexController extends DefaultBaseController {
 	public 	ModelAndView toUpload(HttpServletRequest req) {
 		return getModelAndView("upload_excel");
 	}
+	
+	/**
+	 * 导入页面
+	 * @param req
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value="to_upload_chaopi",method={RequestMethod.GET,RequestMethod.POST})
+	public 	ModelAndView to_upload_chaopi(HttpServletRequest req) {
+		return getModelAndView("to_upload_chaopi");
+	}
+	
 	/**
 	 * 导入页面
 	 * @param req
