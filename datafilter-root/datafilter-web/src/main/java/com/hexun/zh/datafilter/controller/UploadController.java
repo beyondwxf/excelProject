@@ -83,4 +83,56 @@ public class UploadController {
         
         return jsonMap;
 	}
+	
+	/**
+	 * 上传图片
+	 */
+	@RequestMapping(value="upload_file_chaopi",method=RequestMethod.POST,  produces = "application/json;charset=UTF-8")
+	public @ResponseBody Map<String, Object> upload_chaopi(HttpServletRequest request, HttpServletResponse response, @RequestParam("localFile") MultipartFile attachFile){
+
+		Map<String, Object> jsonMap=new HashMap<String, Object>();
+		
+        //上传文件后缀名称
+		String extendName = attachFile.getOriginalFilename().substring(attachFile.getOriginalFilename().lastIndexOf("."));
+		//新文件名称
+		String newFileName = UUID.randomUUID().toString() + extendName;
+
+		try
+		{
+			//应用的真实路径
+			String realContextPath = request.getSession().getServletContext().getRealPath("/");
+ 			String relativePath = "upload/" + DateUtils.getDate(new Date());
+			// 新文件所属目录
+			File destFile = new File(realContextPath + relativePath);
+			
+			if (!destFile.exists()){
+				destFile.mkdirs();
+			}
+			
+ 			// 新文件
+			File normalFile = new File(destFile, newFileName);
+			attachFile.transferTo(normalFile);
+			
+			jsonMap.put("req_code", "T");
+			jsonMap.put("req_mess", "文件上传成功");
+			jsonMap.put("fileURL", normalFile);
+			
+			jsonMap.put("error", 0);
+			jsonMap.put("url", normalFile);
+
+			// 操作excel
+			dataFilterService.importChaoPiExcel(normalFile);
+
+			logger.info("上传成功，返回参数：{}", JSON.toJSONString(jsonMap));
+		} catch (Exception e) {
+			e.printStackTrace();
+			jsonMap.put("req_code", "F");
+			jsonMap.put("req_mess", "文件上传失败");
+			
+			jsonMap.put("error", 1);
+			jsonMap.put("message", e.toString());
+		}
+        
+        return jsonMap;
+	}
 }

@@ -22,6 +22,14 @@ public interface DataFilterService {
      * @param normalFile
      */
     void importExcel(File normalFile) throws Exception;
+    
+    
+    /**
+     * chaop_excel数据导入数据库
+     * @param normalFile
+     */
+    void importChaoPiExcel(File normalFile) throws Exception;
+    
 
     /**
      * 查询线形图数据

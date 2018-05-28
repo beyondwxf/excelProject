@@ -1,5 +1,6 @@
 package com.hexun.zh.datafilter.common.utils;
 
+import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -11,6 +12,7 @@ import java.io.InputStream;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -27,7 +29,7 @@ public class ExcelCPUtils {
      * @return
      * @throws Exception
      */
-    public static  List<List<Object>> getBankListByExcel(InputStream in, String fileName,int productDescNum) throws Exception{
+    public static  List<List<Object>> getBankListByExcel(InputStream in, String fileName) throws Exception{
         List<List<Object>> list = null;
 
         //创建Excel工作薄
@@ -45,6 +47,7 @@ public class ExcelCPUtils {
         for (int i = 0; i < work.getNumberOfSheets(); i++) {
         	sheet = work.getSheetAt(i);
         	sheetName = work.getSheetAt(i).getSheetName();
+        	System.out.println("sheetName:"+sheetName);
             if(sheet==null){continue;}
 
             //遍历当前sheet中的所有行
@@ -54,11 +57,73 @@ public class ExcelCPUtils {
 
                 //遍历所有的列
                 List<Object> li = new ArrayList<Object>();
+                
+                List<Object> licp = null;
+                //每一行
+                String serialNumber = "";
+            	String productCoding = "";
+            	String productName = "";
                 for (int y = row.getFirstCellNum(); y < row.getLastCellNum(); y++) {
-                    cell = row.getCell(y);
-                    li.add(getCellValue(cell));
+                	
+                	 cell = row.getCell(y);
+                	if(0==y) {
+                		 licp = new ArrayList<Object>();
+                		serialNumber = (String) getCellValue(cell);
+                	}else if(1==y) {
+                		productCoding = (String) getCellValue(cell);
+                	}else if(2==y) {
+                		productName = (String)getCellValue(cell);
+                	}else if(y>=3) {
+                    	if(y%2==1) {
+                    		if(y>=5) {
+                   			 licp = new ArrayList<Object>();
+                   		    }
+                    		//加入sheet名称
+                    		licp.add(sheetName);
+                    		licp.add(serialNumber);
+                    		licp.add(productCoding);
+                    		licp.add(productName);
+                    		licp.add(getCellValue(cell));
+                    		
+                    	}else if(y%2==0) {
+                    		
+                    		if(StringUtils.isBlank(getCellValue(cell))) {
+                    			licp.add(null);
+                    			licp.add(null);
+                    		}else {
+                    			System.out.println("getCellValue(cell).toString():"+getCellValue(cell).toString());
+                    			licp.add(getCellValue(cell));
+                    			try {
+                    				licp.add(DateUtils.CPgetExpiryDate(getCellValue(cell).toString()));
+								} catch (Exception e) {
+									licp.add("其他原因");
+								}
+                    			
+                    			
+//                    			licp.add(DateUtils.CPgetExpiryDate(getCellValue(cell).toString()));
+                    		}
+                    	}
+                    	
+                    	
+                    	
+                    }
+                	if((y>=4)&&(y%2==0)) {
+                		System.out.println("licp："+licp.size());
+                		System.out.println("licp.get(\"4\"):"+licp.get(4));
+                    	System.out.println("licp.get(\"6\"):"+licp.get(6));
+                    	if(!(StringUtils.isBlank(licp.get(4))&&StringUtils.isBlank(licp.get(6)))) {
+                    		 list.add(licp);
+                    		 System.out.println("由于两个以一个不为空所以加入数据");
+                    	}else {
+                    		System.out.println("由于都为空，不加入");
+                    	}
+                	}
+                	
+                   	
+//                    System.out.println(y+"_cell:"+cell);
+//                    li.add(getCellValue(cell));
                 }
-                list.add(li);
+//                list.add(li);
             }
         }
 //        work.close();
@@ -92,23 +157,32 @@ public class ExcelCPUtils {
     public static  Object getCellValue(Cell cell){
         Object value = null;
         DecimalFormat df = new DecimalFormat("0");  //格式化number String字符
-        SimpleDateFormat sdf = new SimpleDateFormat("yyy-MM-dd");  //日期格式化
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyMMdd");  //日期格式化
         DecimalFormat df2 = new DecimalFormat("0.00");  //格式化数字
 
         if(cell == null) return null;
 
         switch (cell.getCellType()) {
             case Cell.CELL_TYPE_STRING:
-                value = cell.getRichStringCellValue().getString();
+                value = cell.getRichStringCellValue().getString().trim();
                 break;
             case Cell.CELL_TYPE_NUMERIC:
-                if("General".equals(cell.getCellStyle().getDataFormatString())){
-                    value = df.format(cell.getNumericCellValue());
-                }else if("m/d/yy".equals(cell.getCellStyle().getDataFormatString())){
-                    value = sdf.format(cell.getDateCellValue());
-                }else{
-                    value = df2.format(cell.getNumericCellValue());
-                }
+            	if (HSSFDateUtil.isCellDateFormatted(cell)) {
+            		Date date = cell.getDateCellValue();
+            		value = sdf.format(date);
+
+            	}else {
+            		if("General".equals(cell.getCellStyle().getDataFormatString())){
+                        value = df.format(cell.getNumericCellValue());
+                    }
+//            		else if("m/d/yy".equals(cell.getCellStyle().getDataFormatString())){
+//                        value = sdf.format(cell.getDateCellValue());
+//                    }
+                    else{
+                        value = df.format(cell.getNumericCellValue());
+                    }
+            	}
+                
                 break;
             case Cell.CELL_TYPE_BOOLEAN:
                 value = cell.getBooleanCellValue();

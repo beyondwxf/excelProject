@@ -27,8 +27,8 @@
       <!-- nav -->
       <ul class="nav nav-tabs">
           <li role="presentation"><a href="${request.contextPath}/index">首页</a></li>
-          <li role="presentation" class="active"><a href="${request.contextPath}/to_upload">数据导入</a></li>
-          <li role="presentation"><a href="${request.contextPath}/to_upload_chaopi">朝批效期数据导入</a></li>
+          <li role="presentation"><a href="${request.contextPath}/to_upload">数据导入</a></li>
+          <li role="presentation" class="active"><a href="${request.contextPath}/to_upload_chaopi">朝批效期数据导入</a></li>
           <li role="presentation"><a href="${request.contextPath}/bi">BI</a></li>
       </ul>
 
@@ -54,7 +54,7 @@
 
           $('#localFile').fileinput({
               language: 'zh',
-              uploadUrl: '${request.contextPath}/upload_file',
+              uploadUrl: '${request.contextPath}/upload_file_chaopi',
               maxFileCount: 1, //表示允许同时上传的最大文件个数
               maxFileSize: 1024*1024,//单位为kb
               validateInitialCount:true,

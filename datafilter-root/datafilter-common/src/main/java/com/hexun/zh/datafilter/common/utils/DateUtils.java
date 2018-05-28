@@ -828,6 +828,11 @@ public class DateUtils {
     	return new Timestamp(System.currentTimeMillis()); 
     }
     
+    /**
+     * 获取开头为数字的 连续日期转换成日期
+     * @param dateStr
+     * @return
+     */
     public static String CPgetExpiryDate(String dateStr){
     	if(StringUtils.isBlank(dateStr)){
     		return null;
@@ -836,20 +841,32 @@ public class DateUtils {
     		Pattern p2 = Pattern.compile(reg);  
     		Matcher m2 = p2.matcher(dateStr);  
     		if(m2.find()){  
-    		    System.out.println(m2.group(0));  // 组提取字符串  
+//    		    System.out.println(m2.group(0));  // 组提取字符串  
     		}
     		if(StringUtils.isBlank(m2.group(0))){
     			return null ;
     		}else{
-//    			if(m2.group(0))
-    			return StringToString(m2.group(0), CPDatePattern6, CPDatePattern8);  
-//    			return getDate(m2.group(0));
+    			if(m2.group(0).length()<6) {
+    				return null;
+    			}else if(m2.group(0).length()==6) {
+    				return StringToString(m2.group(0), CPDatePattern6, CPDatePattern8);  
+    			}else if(m2.group(0).length()==8) {
+    				return StringToString(m2.group(0), CPDatePattern8, CPDatePattern8);
+    			}else if(m2.group(0).length()>8){
+    				return StringToString(m2.group(0).substring(0, 8), CPDatePattern8, CPDatePattern8);
+    			}else {
+    				return null;
+    			}
+    			
     		}
     	}
     	
     }
    public static void main(String[] args) {
-	   System.out.println(CPgetExpiryDate("202006"));
+	   System.out.println(CPgetExpiryDate("2020-0w6-*36=963852741"));
+	   
+	   String s = "2020123456789";
+	   System.out.println(s.substring(0,8));
 }
 
  /*   public static void main(String[] args) {
