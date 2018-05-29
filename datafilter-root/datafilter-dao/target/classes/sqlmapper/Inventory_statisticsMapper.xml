@@ -159,13 +159,16 @@
   </select>
   
   
-    <select id="findInventoryStatisticsDistinctFileName" resultType="java.util.HashMap" parameterType="java.util.HashMap" >
-	    SELECT DISTINCT
-		i.fileName
-	FROM
-		inventory_statistics i
-	WHERE
-		1=1 
+    <select id="findInventoryStatisticsDistinctSheetName" resultType="java.util.HashMap" parameterType="java.util.HashMap" >
+			SELECT DISTINCT
+			i.sheetName
+		FROM
+			inventory_statistics i
+		WHERE
+			1 = 1
+		<if test="fileName != null" >
+	      AND i.fileName = #{fileName}
+	    </if>
 	    <if test="startTime != null" >
 	      AND i.effectiveTime &gt;= #{startTime}
 	    </if>
@@ -176,5 +179,56 @@
     i.effectiveTime
   </select>
   
+	  <select id="findInventoryStatisticsDistinctSerialNumber" resultType="java.util.HashMap" parameterType="java.util.HashMap" >
+				SELECT DISTINCT
+				i.serialNumber
+			FROM
+				inventory_statistics i
+			WHERE
+				1 = 1
+		   <if test="fileName != null" >
+		     AND i.fileName = #{fileName}
+		   </if>
+		   <if test="sheetName != null" >
+		     AND i.sheetName = #{sheetName}
+		   </if>
+		   <if test="startTime != null" >
+		     AND i.effectiveTime &gt;= #{startTime}
+		   </if>
+		   <if test="endTime != null" >
+		     AND i.effectiveTime &lt;= #{endTime}
+		   </if>
+		   ORDER BY
+		  i.effectiveTime
+	</select>
+	
+    <select id="findInventoryStatisticsBySeri" resultType="java.util.HashMap" parameterType="java.util.HashMap" >
+				SELECT DISTINCT
+				i.serialNumber
+			FROM
+				inventory_statistics i
+			WHERE
+				1 = 1
+		   <if test="fileName != null" >
+		     AND i.fileName = #{fileName}
+		   </if>
+		   <if test="sheetName != null" >
+		     AND i.sheetName = #{sheetName}
+		   </if>
+		   <if test="serialNumber != null" >
+		     AND i.serialNumber = #{serialNumber}
+		   </if>
+		   <if test="startTime != null" >
+		     AND i.effectiveTime &gt;= #{startTime}
+		   </if>
+		   <if test="endTime != null" >
+		     AND i.effectiveTime &lt;= #{endTime}
+		   </if>
+		   ORDER BY
+		  i.effectiveTime
+	</select>
   
+   <delete id="deleteAll" >
+    delete from inventory_statistics
+  </delete>
 </mapper>

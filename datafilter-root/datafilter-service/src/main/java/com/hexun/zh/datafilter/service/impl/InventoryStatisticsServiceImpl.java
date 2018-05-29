@@ -9,14 +9,17 @@ import java.util.Map;
 import java.util.UUID;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
+import com.hexun.zh.datafilter.common.utils.BaseResponse;
 import com.hexun.zh.datafilter.common.utils.CsvCPUtils;
 import com.hexun.zh.datafilter.common.utils.ExcelCPUtils;
+import com.hexun.zh.datafilter.common.utils.StringUtils;
 import com.hexun.zh.datafilter.mapper.Inventory_statisticsMapper;
 import com.hexun.zh.datafilter.service.InventoryStatisticsService;
 
@@ -91,16 +94,118 @@ public class  InventoryStatisticsServiceImpl implements InventoryStatisticsServi
         log.info(" ** 批量插入完成,耗时：{}秒",(System.currentTimeMillis()-startTime)/1000);
     }
 
-	@Override
-	public List<Map<String, Object>> findInventoryStatisticsGroupBy(String startTime, String endTime) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public List<Map<String, Object>> findInventoryStatisticsGroupBy(String startTime, String endTime) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 	@Override
 	public int deleteAll() {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public BaseResponse findInventoryStatisticsDistinctFileName(HttpServletRequest req) {
+		String startTime = req.getParameter("startTime");
+        String endTime = req.getParameter("endTime");
+
+        if(StringUtils.isBlank(startTime)){
+            log.info("开始时间为空");
+            return BaseResponse.getSuccessByEnCode("开始时间为空");
+        }
+        if(StringUtils.isBlank(endTime)){
+            log.info("结束时间为空");
+            return BaseResponse.getSuccessByEnCode("结束时间为空");
+        }
+
+        List<Map<String,Object>> list = inventory_statisticsMapper.findInventoryStatisticsDistinctFileName(startTime,endTime);
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public BaseResponse findInventoryStatisticsDistinctSheetName(HttpServletRequest req) {
+		String startTime = req.getParameter("startTime");
+		String endTime = req.getParameter("endTime");
+		String fileName = req.getParameter("fileName");
+
+        if(StringUtils.isBlank(startTime)){
+            log.info("开始时间为空");
+            return BaseResponse.getSuccessByEnCode("开始时间为空");
+        }
+        if(StringUtils.isBlank(endTime)){
+            log.info("结束时间为空");
+            return BaseResponse.getSuccessByEnCode("结束时间为空");
+        }
+        if(StringUtils.isBlank(fileName)){
+            log.info("文件名称不能为空");
+            return BaseResponse.getSuccessByEnCode("文件名称不能为空");
+        }
+        List<Map<String,Object>> list = inventory_statisticsMapper.findInventoryStatisticsDistinctSheetName(startTime,endTime,fileName);
+		return null;
+	}
+
+	@Override
+	public BaseResponse findInventoryStatisticsDistinctSerialNumber(HttpServletRequest req) {
+		String startTime = req.getParameter("startTime");
+		String endTime = req.getParameter("endTime");
+		String fileName = req.getParameter("fileName");
+		String sheetName = req.getParameter("sheetName");
+
+        if(StringUtils.isBlank(startTime)){
+            log.info("开始时间为空");
+            return BaseResponse.getSuccessByEnCode("开始时间为空");
+        }
+        if(StringUtils.isBlank(endTime)){
+            log.info("结束时间为空");
+            return BaseResponse.getSuccessByEnCode("结束时间为空");
+        }
+        if(StringUtils.isBlank(fileName)){
+            log.info("文件名称不能为空");
+            return BaseResponse.getSuccessByEnCode("文件名称不能为空");
+        }
+        if(StringUtils.isBlank(sheetName)){
+            log.info("sheet名称不能为空");
+            return BaseResponse.getSuccessByEnCode("sheet名称不能为空");
+        }
+        List<Map<String,Object>> list = inventory_statisticsMapper.findInventoryStatisticsDistinctSerialNumber(startTime,endTime,fileName,sheetName);
+		return null;
+	}
+
+	@Override
+	public BaseResponse findInventoryStatisticsBySeri(HttpServletRequest req) {
+		
+		String startTime = req.getParameter("startTime");
+		String endTime = req.getParameter("endTime");
+		String fileName = req.getParameter("fileName");
+		String sheetName = req.getParameter("sheetName");
+		String serialNumber = req.getParameter("serialNumber");
+
+        if(StringUtils.isBlank(startTime)){
+            log.info("开始时间为空");
+            return BaseResponse.getSuccessByEnCode("开始时间为空");
+        }
+        if(StringUtils.isBlank(endTime)){
+            log.info("结束时间为空");
+            return BaseResponse.getSuccessByEnCode("结束时间为空");
+        }
+        if(StringUtils.isBlank(fileName)){
+            log.info("文件名称不能为空");
+            return BaseResponse.getSuccessByEnCode("文件名称不能为空");
+        }
+        if(StringUtils.isBlank(sheetName)){
+            log.info("sheet名称不能为空");
+            return BaseResponse.getSuccessByEnCode("sheet名称不能为空");
+        }
+        if(StringUtils.isBlank(serialNumber)){
+            log.info("serialNumber名称不能为空");
+            return BaseResponse.getSuccessByEnCode("serialNumber名称不能为空");
+        }
+        
+        List<Map<String,Object>> list = inventory_statisticsMapper.findInventoryStatisticsBySeri(startTime,endTime,fileName,sheetName,serialNumber);
+		return null;
 	}
     
 }

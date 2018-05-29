@@ -21,30 +21,30 @@ public interface Inventory_statisticsMapper {
 
     int updateByPrimaryKey(Inventory_statistics record);
     
-    /**
-     * 查询符合条件数据
-     * @param startTime
-     * @param endTime
-     * @return
-     */
-    List<Map<String,Object>> findInventoryStatisticsByTime(@Param("startTime") String startTime,@Param("endTime") String endTime);
-    
-    
-    /**
-     * 分组统计查询
-     * @param startTime
-     * @param endTime
-     * @return
-     */
-    /**
-     * 
-     * @param startTime
-     * @param endTime
-     * @return
-     */
-    List<Map<String,Object>> findInventoryStatisticsGroupBy(@Param("startTime") String startTime,@Param("endTime") String endTime);
-    
-    
+//    /**
+//     * 查询符合条件数据
+//     * @param startTime
+//     * @param endTime
+//     * @return
+//     */
+//    List<Map<String,Object>> findInventoryStatisticsByTime(@Param("startTime") String startTime,@Param("endTime") String endTime);
+//    
+//    
+//    /**
+//     * 分组统计查询
+//     * @param startTime
+//     * @param endTime
+//     * @return
+//     */
+//    /**
+//     * 
+//     * @param startTime
+//     * @param endTime
+//     * @return
+//     */
+//    List<Map<String,Object>> findInventoryStatisticsGroupBy(@Param("startTime") String startTime,@Param("endTime") String endTime);
+//    
+//    
 
     /**
      * 根据时间段查询查询 不重样的文件名称
@@ -76,6 +76,17 @@ public interface Inventory_statisticsMapper {
      * @return
      */
     List<Map<String,Object>> findInventoryStatisticsDistinctSerialNumber(@Param("startTime") String startTime,@Param("endTime") String endTime,@Param("fileName") String fileName,@Param("sheetName") String sheetName);
+    
+    
+    /**
+     * 根据文件名，sheet名称，产品序列号 查询产品有效产品列表
+     * @param startTime
+     * @param endTime
+     * @param fileName
+     * @param sheetName
+     * @return
+     */
+    List<Map<String,Object>> findInventoryStatisticsBySeri(@Param("startTime") String startTime,@Param("endTime") String endTime,@Param("fileName") String fileName,@Param("sheetName") String sheetName,@Param("serialNumber") String serialNumber);
     
     
     /**
