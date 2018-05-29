@@ -36,6 +36,12 @@ public interface Inventory_statisticsMapper {
      * @param endTime
      * @return
      */
+    /**
+     * 
+     * @param startTime
+     * @param endTime
+     * @return
+     */
     List<Map<String,Object>> findInventoryStatisticsGroupBy(@Param("startTime") String startTime,@Param("endTime") String endTime);
     
     

@@ -139,4 +139,42 @@
       effectiveTime = #{effectivetime,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+  
+  <!--  根据时间段查询查询 不重样的文件名称-->
+  <select id="findInventoryStatisticsDistinctFileName" resultType="java.util.HashMap" parameterType="java.util.HashMap" >
+	    SELECT DISTINCT
+		i.fileName
+	FROM
+		inventory_statistics i
+	WHERE
+		1=1 
+	    <if test="startTime != null" >
+	      AND i.effectiveTime &gt;= #{startTime}
+	    </if>
+	    <if test="endTime != null" >
+	      AND i.effectiveTime &lt;= #{endTime}
+	    </if>
+     ORDER BY
+    i.effectiveTime
+  </select>
+  
+  
+    <select id="findInventoryStatisticsDistinctFileName" resultType="java.util.HashMap" parameterType="java.util.HashMap" >
+	    SELECT DISTINCT
+		i.fileName
+	FROM
+		inventory_statistics i
+	WHERE
+		1=1 
+	    <if test="startTime != null" >
+	      AND i.effectiveTime &gt;= #{startTime}
+	    </if>
+	    <if test="endTime != null" >
+	      AND i.effectiveTime &lt;= #{endTime}
+	    </if>
+     ORDER BY
+    i.effectiveTime
+  </select>
+  
+  
 </mapper>
