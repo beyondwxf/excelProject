@@ -1,8 +1,15 @@
 package com.hexun.zh.datafilter.controller;
 
-import com.alibaba.fastjson.JSON;
-import com.hexun.zh.datafilter.common.utils.DateUtils;
-import com.hexun.zh.datafilter.service.DataFilterService;
+import java.io.File;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -12,14 +19,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import com.alibaba.fastjson.JSON;
+import com.hexun.zh.datafilter.common.utils.DateUtils;
+import com.hexun.zh.datafilter.service.DataFilterService;
+import com.hexun.zh.datafilter.service.InventoryStatisticsService;
 
 /**
  * 上传
@@ -29,8 +32,15 @@ import java.util.UUID;
 @Controller
 public class UploadController {
 	private Logger logger = LoggerFactory.getLogger(getClass());
+	
 	@Resource
 	private DataFilterService dataFilterService;
+	
+	
+	@Resource
+	private InventoryStatisticsService inventoryStatisticsService;
+	
+	
 	
 	/**
 	 * 上传图片
@@ -121,7 +131,7 @@ public class UploadController {
 			jsonMap.put("url", normalFile);
 
 			// 操作excel
-			dataFilterService.importChaoPiExcel(normalFile);
+			inventoryStatisticsService.importChaoPiExcel(normalFile);
 
 			logger.info("上传成功，返回参数：{}", JSON.toJSONString(jsonMap));
 		} catch (Exception e) {
