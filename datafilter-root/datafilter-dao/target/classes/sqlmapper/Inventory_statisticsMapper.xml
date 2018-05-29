@@ -141,21 +141,21 @@
   </update>
   
   <!--  根据时间段查询查询 不重样的文件名称-->
-  <select id="findInventoryStatisticsDistinctFileName" resultType="java.util.HashMap" parameterType="java.util.HashMap" >
+  <select id="findInventoryStatisticsDistinctFileName" resultType="java.util.HashMap" >
 	    SELECT DISTINCT
-		i.fileName
+		fileName fileName
 	FROM
-		inventory_statistics i
+		inventory_statistics 
 	WHERE
 		1=1 
 	    <if test="startTime != null" >
-	      AND i.effectiveTime &gt;= #{startTime}
+	      AND effectiveTime &gt;= #{startTime}
 	    </if>
 	    <if test="endTime != null" >
-	      AND i.effectiveTime &lt;= #{endTime}
+	      AND effectiveTime &lt;= #{endTime}
 	    </if>
      ORDER BY
-    i.effectiveTime
+     effectiveTime
   </select>
   
   

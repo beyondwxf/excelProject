@@ -6,6 +6,8 @@ import com.hexun.zh.datafilter.common.utils.BaseResponse;
 import com.hexun.zh.datafilter.common.utils.StringUtils;
 import com.hexun.zh.datafilter.entity.Feedback;
 import com.hexun.zh.datafilter.service.DataFilterService;
+import com.hexun.zh.datafilter.service.InventoryStatisticsService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
@@ -31,6 +33,9 @@ public class IndexController extends DefaultBaseController {
 
 	@Resource
 	private DataFilterService dataFilterService;
+	
+	@Resource
+	private InventoryStatisticsService inventoryStatisticsService;
 
 	/**
 	 * 首页
@@ -63,6 +68,31 @@ public class IndexController extends DefaultBaseController {
 	@RequestMapping(value="to_upload_chaopi",method={RequestMethod.GET,RequestMethod.POST})
 	public 	ModelAndView to_upload_chaopi(HttpServletRequest req) {
 		return getModelAndView("to_upload_chaopi");
+	}
+	
+	
+	
+	
+	/**
+	 * 导入页面
+	 * @param req
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value="to_upload_query",method={RequestMethod.GET,RequestMethod.POST})
+	public 	ModelAndView to_upload_query(HttpServletRequest req) {
+		return getModelAndView("chaopiquery");
+	}
+	
+	/**
+	 * 加载cp数据
+	 * @param req
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value="load_chaopi_data",method={RequestMethod.GET,RequestMethod.POST})
+	public 	@ResponseBody BaseResponse loadCPData(HttpServletRequest req){
+		return inventoryStatisticsService.findInventoryStatisticsDistinctFileName(req);
 	}
 	
 	/**

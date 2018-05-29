@@ -16,6 +16,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
+import com.alibaba.fastjson.JSON;
 import com.hexun.zh.datafilter.common.utils.BaseResponse;
 import com.hexun.zh.datafilter.common.utils.CsvCPUtils;
 import com.hexun.zh.datafilter.common.utils.ExcelCPUtils;
@@ -34,7 +35,7 @@ public class  InventoryStatisticsServiceImpl implements InventoryStatisticsServi
 	
 	    @Resource
 	    private JdbcTemplate jdbcTemplate;
-	
+	    @Resource
 	    private Inventory_statisticsMapper inventory_statisticsMapper;
 	
 	  /**
@@ -120,9 +121,17 @@ public class  InventoryStatisticsServiceImpl implements InventoryStatisticsServi
             return BaseResponse.getSuccessByEnCode("结束时间为空");
         }
 
-        List<Map<String,Object>> list = inventory_statisticsMapper.findInventoryStatisticsDistinctFileName(startTime,endTime);
+        List<Map<String,String>> list = inventory_statisticsMapper.findInventoryStatisticsDistinctFileName(startTime,endTime);
+        log.info(" **  根据时间段查询查询 不重样的文件名称，查询到结果：{}", JSON.toJSONString(list));
+        
+//        Map<String,String> resultMap = null;
+//        List<Map<String, String>> resultList = new ArrayList<>();
+//        int i = 0;
+//        for(Map<String,String> map : list){
+//            i++;
+//        }
 		// TODO Auto-generated method stub
-		return null;
+		return BaseResponse.getSuccessByEnCode(list);
 	}
 
 	@Override
