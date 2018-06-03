@@ -20,6 +20,8 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 页面
@@ -93,6 +95,20 @@ public class IndexController extends DefaultBaseController {
 	@RequestMapping(value="load_chaopi_data",method={RequestMethod.GET,RequestMethod.POST})
 	public 	@ResponseBody BaseResponse loadCPData(HttpServletRequest req){
 		return inventoryStatisticsService.findInventoryStatisticsDistinctFileName(req);
+	}
+	
+	/**
+	 * 导出excel
+	 * @param req
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value="export_chaopi_data",method={RequestMethod.GET,RequestMethod.POST})
+	public 	@ResponseBody BaseResponse exportChaoPiData(HttpServletRequest req){
+		
+		List<List<Map<String,Object>>>  datelist = inventoryStatisticsService.queryExportExcelData(req);
+		System.out.println(datelist.toString());
+		return null;
 	}
 	
 	/**

@@ -4,7 +4,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 import java.util.UUID;
 
@@ -25,7 +29,7 @@ import com.hexun.zh.datafilter.mapper.Inventory_statisticsMapper;
 import com.hexun.zh.datafilter.service.InventoryStatisticsService;
 
 @Service
-public class  InventoryStatisticsServiceImpl implements InventoryStatisticsService {
+public  class  InventoryStatisticsServiceImpl implements InventoryStatisticsService {
 	
 	private Logger log = LoggerFactory.getLogger(getClass());
 
@@ -215,6 +219,90 @@ public class  InventoryStatisticsServiceImpl implements InventoryStatisticsServi
         
         List<Map<String,Object>> list = inventory_statisticsMapper.findInventoryStatisticsBySeri(startTime,endTime,fileName,sheetName,serialNumber);
 		return null;
+	}
+
+	@Override
+	public  List<List<Map<String,Object>>> queryExportExcelData(HttpServletRequest req) {
+		String startTime = req.getParameter("startTime");
+		String endTime = req.getParameter("endTime");
+		 if(StringUtils.isBlank(startTime)){
+	            log.info("开始时间为空");
+	            return null;
+	        }
+	        if(StringUtils.isBlank(endTime)){
+	            log.info("结束时间为空");
+	            return null;
+	        }
+	        List<List<Map<String,Object>>> excelExportList = new ArrayList<>();
+	        List<Map<String,Object>> sheetNamelist = inventory_statisticsMapper.findInventoryStatisticsDistinctSheetName(startTime,endTime,null); 
+	        for(Map<String,Object> mapSheetName : sheetNamelist){
+	        	System.out.println(mapSheetName.get("sheetName"));
+	        	String sheetName = mapSheetName.get("sheetName").toString();
+	        	List<Map<String,Object>> excelExportSingleList = new ArrayList<>();
+	        	Map<String,Object> map = new HashMap<>();
+	        	map.put("sheetName", sheetName);
+	        	int titleNum = 0;
+	        	
+	        	List sheetDataList = new ArrayList<>();
+	        	  List<Map<String,Object>> serialNumberlist = inventory_statisticsMapper.findInventoryStatisticsDistinctSerialNumber(startTime, endTime, null, sheetName);
+	        	 if(null != serialNumberlist) {
+		        	  for(Map<String,Object> mapSerialNumber : serialNumberlist){
+		        		  
+		  	        	String serialNumber = mapSerialNumber.get("serialNumber").toString();
+		  	        	System.out.println("serialNumber:"+serialNumber);
+		  	        	
+		  	         	List<String> excelProduct = null;
+		  	             List<Map<String,Object>> productList  = inventory_statisticsMapper.findInventoryStatisticsBySeri(startTime, endTime, null, sheetName, serialNumber);
+		  	             		if(null != productList && productList.size()>0) {
+		  	             			
+		  	             			String productCoding = productList.get(0).get("productCoding").toString();
+		  	             			String productName = productList.get(0).get("productName").toString();
+		  	             			excelProduct = new ArrayList<>();
+		  	             			excelProduct.add(serialNumber);
+		  	             			excelProduct.add(productCoding);
+		  	             			excelProduct.add(productName);
+		  	             		}
+		  	                 for(Map<String,Object> mapProductInfo : productList){
+		  	                	String productCoding = mapProductInfo.get("productCoding").toString();
+		  	                	String productName = mapProductInfo.get("productName").toString();
+		  	                	String productInventory = mapProductInfo.get("productInventory").toString();
+		  	                	String productEffectiveTimeDec = mapProductInfo.get("productEffectiveTimeDec").toString();
+		  	                	System.out.println("productCoding:"+productCoding);
+		  	                	System.out.println("productName:"+productName);
+		  	                	System.out.println("productInventory:"+productInventory);
+		  	                	System.out.println("productEffectiveTimeDec:"+productEffectiveTimeDec);
+		  	                	
+		  	                	excelProduct.add(productInventory);
+		  	                	excelProduct.add(productEffectiveTimeDec);
+		  	                	
+				  	      	 }
+		  	                 if(excelProduct.size() > titleNum) {
+		  	                	 titleNum = excelProduct.size();
+		  	                 }
+		  	              
+		  	               sheetDataList.add(excelProduct); 
+		        	  }
+		        	   List titleNameList  = new ArrayList<>();
+		        	   titleNameList.add("编码");
+		        	   titleNameList.add("条码");
+		        	   titleNameList.add("名称");
+		        	   for(int i=3;i<titleNum;i++) {
+		        		   if(i%2==1) {
+		        			   titleNameList.add("数量");
+		        		   }else {
+		        			   titleNameList.add("效期");
+		        		   }
+		        		  
+		        	   }
+		        	    map.put("titleName",titleNameList);
+		        	   
+		        		map.put("sheetList", sheetDataList);
+		        		excelExportSingleList.add(map);
+	        	 }
+	        	 
+	        	 excelExportList.add(excelExportSingleList);
+	        }
+		return excelExportList;
 	}
     
 }

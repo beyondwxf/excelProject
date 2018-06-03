@@ -167,6 +167,7 @@
           <li role="presentation" class="active"><a href="#">首页</a></li>
           <li role="presentation"><a href="${request.contextPath}/to_upload">数据导入</a></li>
           <li role="presentation"><a href="${request.contextPath}/to_upload_chaopi">朝批效期数据导入</a></li>
+          <li role="presentation"><a href="${request.contextPath}/to_upload_query">朝批效期数据</a></li>
           <li role="presentation"><a href="${request.contextPath}/bi">BI</a></li>
       </ul>
       <!-- table -->

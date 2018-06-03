@@ -73,4 +73,9 @@ public interface InventoryStatisticsService {
      * @return
      */
     int deleteAll();
+    
+    /**
+     * 查询excel导出数据
+     */
+    List queryExportExcelData(HttpServletRequest req);
 }

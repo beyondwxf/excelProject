@@ -31,7 +31,8 @@
       <li role="presentation"><a href="${request.contextPath}/index">首页</a></li>
       <li role="presentation"><a href="${request.contextPath}/to_upload">数据导入</a></li>
       <li role="presentation"><a href="${request.contextPath}/to_upload_chaopi">朝批效期数据导入</a></li>
-      <li role="presentation" class="active"><a href="${request.contextPath}/bi">BI</a></li>
+       <li role="presentation" class="active"><a href="${request.contextPath}/to_upload_query">朝批效期数据</a></li>
+      <li role="presentation" ><a href="${request.contextPath}/bi">BI</a></li>
   </ul>
 
     <!-- page content -->
@@ -126,7 +127,9 @@
       function queryChaopi(){
           var startTime = $("#line_datetimepicker_start").val();
           var endTime = $("#line_datetimepicker_end").val();
-          $.get("${request.contextPath}/load_chaopi_data",{
+         // $.get("${request.contextPath}/load_chaopi_data",{
+          
+       $.get("${request.contextPath}/export_chaopi_data",{
               "startTime": startTime,
               "endTime": endTime
           },function (data) {
