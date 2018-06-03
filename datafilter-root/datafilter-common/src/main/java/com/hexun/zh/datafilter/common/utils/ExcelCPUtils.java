@@ -133,7 +133,12 @@ public class ExcelCPUtils {
 								System.out.println("getCellValue(cell).toString():" + getCellValue(cell).toString());
 								licp.add(getCellValue(cell));
 								try {
-									licp.add(DateUtils.CPgetExpiryDate(getCellValue(cell).toString()));
+									if(StringUtils.isBlank(DateUtils.CPgetExpiryDate(getCellValue(cell).toString()))) {
+										licp.add("其他原因");
+									}else {
+										licp.add(DateUtils.CPgetExpiryDate(getCellValue(cell).toString()));
+									}
+									
 								} catch (Exception e) {
 									licp.add("其他原因");
 								}

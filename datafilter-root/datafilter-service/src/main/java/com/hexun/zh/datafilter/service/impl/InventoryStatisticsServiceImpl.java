@@ -241,7 +241,6 @@ public  class  InventoryStatisticsServiceImpl implements InventoryStatisticsServ
 	            log.info("结束时间为空");
 	            return null;
 	        }
-//	        List<List<Map<String,Object>>> excelExportList = new ArrayList<>();
 	        List<Map<String,Object>> excelExportSheetList = excelExportSheetList = new ArrayList<>();
 	        List<Map<String,Object>> sheetNamelist = inventory_statisticsMapper.findInventoryStatisticsDistinctSheetName(startTime,endTime,fileName); 
 	        for(Map<String,Object> mapSheetName : sheetNamelist){
@@ -309,7 +308,6 @@ public  class  InventoryStatisticsServiceImpl implements InventoryStatisticsServ
 		        		excelExportSheetList.add(map);
 	        	 }
 	        	 
-//	        	 excelExportList.add(excelExportSingleList);
 	        }
 		return excelExportSheetList;
 	}

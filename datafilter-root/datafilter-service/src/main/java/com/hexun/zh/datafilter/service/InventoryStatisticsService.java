@@ -78,4 +78,5 @@ public interface InventoryStatisticsService {
      * 查询excel导出数据
      */
     List queryExportExcelData(HttpServletRequest req);
+    
 }

@@ -91,7 +91,7 @@ public interface Inventory_statisticsMapper {
     
     
     /**
-     * 根据文件名，sheet名称，名查询产品序列号不符合的数据名称
+     * 根据文件名，sheet名称，名查询产品序列号名称
      * @param startTime
      * @param endTime
      * @param fileName

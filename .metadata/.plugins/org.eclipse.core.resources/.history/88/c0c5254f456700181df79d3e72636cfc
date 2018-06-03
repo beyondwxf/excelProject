@@ -89,18 +89,6 @@ public interface Inventory_statisticsMapper {
     List<Map<String,Object>> findInventoryStatisticsBySeri(@Param("startTime") String startTime,@Param("endTime") String endTime,@Param("fileName") String fileName,@Param("sheetName") String sheetName,@Param("serialNumber") String serialNumber);
     
     
-    
-    /**
-     * 根据文件名，sheet名称，名查询产品序列号不符合的数据名称
-     * @param startTime
-     * @param endTime
-     * @param fileName
-     * @param sheetName
-     * @return
-     */
-    List<Map<String,Object>> inconformityData(@Param("startTime") String startTime,@Param("endTime") String endTime,@Param("fileName") String fileName,@Param("sheetName") String sheetName);
-    
-    
     /**
      * 清除所有
      * @return
