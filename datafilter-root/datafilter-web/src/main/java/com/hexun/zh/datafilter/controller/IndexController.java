@@ -83,7 +83,7 @@ public class IndexController extends DefaultBaseController {
 	
 	
 	/**
-	 * 导入页面
+	 * 查询页面
 	 * @param req
 	 * @return
 	 * @throws Exception
@@ -105,6 +105,19 @@ public class IndexController extends DefaultBaseController {
 	}
 	
 	/**
+	 * 加载cp数据
+	 * @param req
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value="select_chaopi_data",method={RequestMethod.GET,RequestMethod.POST})
+	public 	@ResponseBody BaseResponse loadCPSelectData(HttpServletRequest req){
+		return inventoryStatisticsService.findInventoryStatisticsDistinctFileName(req);
+	}
+	
+	
+	
+	/**
 	 * 导出excel
 	 * @param req
 	 * @return
@@ -120,9 +133,13 @@ public class IndexController extends DefaultBaseController {
 		System.out.println("datelist.get(0).dataList:"+datelist.get(0).get("dataList"));
 //		System.out.println("datelist.get(0).get(0):"+datelist.get(0).get(0).toString());
 //		String fileName = "daochumingzi";
-		 String fileName = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()) + "_" +".xls";
+		String fileName = req.getParameter("fileName");
+		if(StringUtils.isBlank(fileName)) {
+			return ;
+		}
+		 String fileNewName = fileName+"_结果_"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 //		ExcelCPUtils.export(req,response, fileName, datelist.get(0).get("sheetName").toString(), (List)datelist.get(0).get("titleName"),(List<List>)datelist.get(0).get("dataList"));
-		ExcelCPUtils.export(req,response, fileName,datelist);
+		ExcelCPUtils.export(req,response, fileNewName,datelist);
 		System.out.println("datelist:"+datelist.toString());
 //		return null;
 	}

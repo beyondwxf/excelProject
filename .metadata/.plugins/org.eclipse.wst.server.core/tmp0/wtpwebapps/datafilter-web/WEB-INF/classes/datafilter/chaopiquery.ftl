@@ -61,11 +61,7 @@
                               <span class="glyphicon glyphicon-calendar"></span>
                             </span>
                         </div>
-                        <select class="selectpicker" data-style="btn-info" id="feedbackType">
-                            <option value="问题反馈">问题反馈</option>
-                            <option value="新手咨询">新手咨询</option>
-                            <option value="改善建议">改善建议</option>
-                            <option value="内容需求">内容需求</option>
+                        <select class="selectpicker" data-style="btn-info" id="fileNameSelect">
                         </select>
                         &nbsp;
                         <button type="button" class="btn btn-success" onclick="queryChaopi();">加载</button>
@@ -83,6 +79,7 @@
             <form id="exportExcel" action="${request.contextPath}/export_chaopi_data">
 	            <input type="hidden" name="startTime" id="startTime"/>
 	            <input type="hidden" name="endTime" id="endTime"/>
+	            <input type="hidden" name="fileName" id="fileName"/>
             </form>
             <!-- /line graph -->
 
@@ -108,7 +105,7 @@
 
       $(function () {
           init_timer();
-        //  loadLineChat();
+          loadSelect();
         //  loadBarChat();
         //  loadPieChat();
 
@@ -129,7 +126,7 @@
       }
 
       /**
-       * 加载线图
+       * 加载查询数据
        */
        function queryChaopi(){
            var startTime = $("#line_datetimepicker_start").val();
@@ -141,19 +138,43 @@
                "endTime": endTime
            },function (data) {
                if(data.respCode == 'T'){
-               alert(data.result);
-                  // fillLineChat(data.result);
+//             	   $.each(data.result, function(index,val) {
+//             		   console.log('index='+index);
+//             		   alert(val.fileName);
                }
+//                alert();
+                  // fillLineChat(data.result);
            })
        }
+          
+       /**
+        * 加载查询select数据
+        */
+        function loadSelect(){
+            var startTime = $("#line_datetimepicker_start").val();
+            var endTime = $("#line_datetimepicker_end").val();
+         $.get("${request.contextPath}/select_chaopi_data",function (data) {
+                if(data.respCode == 'T'){
+                   $("#fileNameSelect").find("option").remove(); 
+                   $("#fileNameSelect").append("<option value=''>"+"请选择"+"</option>");
+             	   $.each(data.result, function(index,val) {
+             		  $("#fileNameSelect").append("<option value='"+val.fileName+"'>"+val.fileName+"</option>");
+             		 $('#fileNameSelect').selectpicker('refresh');
+             	  })
+                }
+            })
+        }
           
           
        function exportExcelChaopi(){
            var startTime = $("#line_datetimepicker_start").val();
            var endTime = $("#line_datetimepicker_end").val();
            
+           var fileName = $("#fileNameSelect").val();
+           
            $("#startTime").val(startTime);
            $("#endTime").val(endTime);
+           $("#fileName").val(fileName);
            $("#exportExcel").submit();
           // $.get("${request.contextPath}/load_chaopi_data",{
            

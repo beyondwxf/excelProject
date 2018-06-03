@@ -118,14 +118,14 @@ public  class  InventoryStatisticsServiceImpl implements InventoryStatisticsServ
 		String startTime = req.getParameter("startTime");
         String endTime = req.getParameter("endTime");
 
-        if(StringUtils.isBlank(startTime)){
-            log.info("开始时间为空");
-            return BaseResponse.getSuccessByEnCode("开始时间为空");
-        }
-        if(StringUtils.isBlank(endTime)){
-            log.info("结束时间为空");
-            return BaseResponse.getSuccessByEnCode("结束时间为空");
-        }
+//        if(StringUtils.isBlank(startTime)){
+//            log.info("开始时间为空");
+//            return BaseResponse.getSuccessByEnCode("开始时间为空");
+//        }
+//        if(StringUtils.isBlank(endTime)){
+//            log.info("结束时间为空");
+//            return BaseResponse.getSuccessByEnCode("结束时间为空");
+//        }
 
         List<Map<String,String>> list = inventory_statisticsMapper.findInventoryStatisticsDistinctFileName(startTime,endTime);
         log.info(" **  根据时间段查询查询 不重样的文件名称，查询到结果：{}", JSON.toJSONString(list));
@@ -227,17 +227,23 @@ public  class  InventoryStatisticsServiceImpl implements InventoryStatisticsServ
 	public List<Map<String,Object>> queryExportExcelData(HttpServletRequest req) {
 		String startTime = req.getParameter("startTime");
 		String endTime = req.getParameter("endTime");
-		 if(StringUtils.isBlank(startTime)){
+		String fileName = req.getParameter("fileName");
+		if(StringUtils.isBlank(startTime)){
 	            log.info("开始时间为空");
 	            return null;
 	        }
-	        if(StringUtils.isBlank(endTime)){
+		 if(StringUtils.isBlank(endTime)){
+	            log.info("结束时间为空");
+	            return null;
+	        }
+		 
+		 if(StringUtils.isBlank(fileName)){
 	            log.info("结束时间为空");
 	            return null;
 	        }
 //	        List<List<Map<String,Object>>> excelExportList = new ArrayList<>();
 	        List<Map<String,Object>> excelExportSheetList = excelExportSheetList = new ArrayList<>();
-	        List<Map<String,Object>> sheetNamelist = inventory_statisticsMapper.findInventoryStatisticsDistinctSheetName(startTime,endTime,null); 
+	        List<Map<String,Object>> sheetNamelist = inventory_statisticsMapper.findInventoryStatisticsDistinctSheetName(startTime,endTime,fileName); 
 	        for(Map<String,Object> mapSheetName : sheetNamelist){
 	        	System.out.println(mapSheetName.get("sheetName"));
 	        	String sheetName = mapSheetName.get("sheetName").toString();
@@ -247,7 +253,7 @@ public  class  InventoryStatisticsServiceImpl implements InventoryStatisticsServ
 	        	int titleNum = 0;
 	        	
 	        	List sheetDataList = new ArrayList<>();
-	        	  List<Map<String,Object>> serialNumberlist = inventory_statisticsMapper.findInventoryStatisticsDistinctSerialNumber(startTime, endTime, null, sheetName);
+	        	  List<Map<String,Object>> serialNumberlist = inventory_statisticsMapper.findInventoryStatisticsDistinctSerialNumber(startTime, endTime, fileName, sheetName);
 	        	 if(null != serialNumberlist) {
 		        	  for(Map<String,Object> mapSerialNumber : serialNumberlist){
 		        		  
@@ -255,7 +261,7 @@ public  class  InventoryStatisticsServiceImpl implements InventoryStatisticsServ
 		  	        	System.out.println("serialNumber:"+serialNumber);
 		  	        	
 		  	         	List<String> excelProduct = null;
-		  	             List<Map<String,Object>> productList  = inventory_statisticsMapper.findInventoryStatisticsBySeri(startTime, endTime, null, sheetName, serialNumber);
+		  	             List<Map<String,Object>> productList  = inventory_statisticsMapper.findInventoryStatisticsBySeri(startTime, endTime, fileName, sheetName, serialNumber);
 		  	             		if(null != productList && productList.size()>0) {
 		  	             			
 		  	             			String productCoding = productList.get(0).get("productCoding").toString();
