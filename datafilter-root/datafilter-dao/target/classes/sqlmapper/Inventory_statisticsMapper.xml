@@ -203,8 +203,11 @@
 	</select>
 	
     <select id="findInventoryStatisticsBySeri" resultType="java.util.HashMap" parameterType="java.util.HashMap" >
-				SELECT DISTINCT
-				i.serialNumber
+				SELECT i.productCoding,
+				i.productName,
+				i.productInventory,
+				i.productEffectiveTimeDec
+				
 			FROM
 				inventory_statistics i
 			WHERE
