@@ -49,7 +49,7 @@
                     <div class="form-inline">
                         开始时间：
                         <div class="input-group date col-xs-3" id="time">
-                            <input type="text" class="form-control timer" value="20140627" id="line_datetimepicker_start">
+                            <input type="text" class="form-control timer" value="20140627"  id="line_datetimepicker_start">
                                 <span class="input-group-addon">
                               <span class="glyphicon glyphicon-calendar"></span>
                             </span>
@@ -69,6 +69,8 @@
                         </select>
                         &nbsp;
                         <button type="button" class="btn btn-success" onclick="queryChaopi();">加载</button>
+                        &nbsp;
+                        <button type="button" class="btn btn-success" onclick="exportExcelChaopi();">下载excel</button>
                     </div>
                     <!-- 日历end -->
 
@@ -77,6 +79,11 @@
                     </div>
                 </div>
             </div>
+            
+            <form id="exportExcel" action="${request.contextPath}/export_chaopi_data">
+	            <input type="hidden" name="startTime" id="startTime"/>
+	            <input type="hidden" name="endTime" id="endTime"/>
+            </form>
             <!-- /line graph -->
 
 
@@ -124,21 +131,33 @@
       /**
        * 加载线图
        */
-      function queryChaopi(){
-          var startTime = $("#line_datetimepicker_start").val();
-          var endTime = $("#line_datetimepicker_end").val();
-         // $.get("${request.contextPath}/load_chaopi_data",{
+       function queryChaopi(){
+           var startTime = $("#line_datetimepicker_start").val();
+           var endTime = $("#line_datetimepicker_end").val();
+          // $.get("${request.contextPath}/load_chaopi_data",{
+           
+        $.get("${request.contextPath}/export_chaopi_data",{
+               "startTime": startTime,
+               "endTime": endTime
+           },function (data) {
+               if(data.respCode == 'T'){
+               alert(data.result);
+                  // fillLineChat(data.result);
+               }
+           })
+       }
           
-       $.get("${request.contextPath}/export_chaopi_data",{
-              "startTime": startTime,
-              "endTime": endTime
-          },function (data) {
-              if(data.respCode == 'T'){
-              alert(data.result);
-                 // fillLineChat(data.result);
-              }
-          })
-      }
+          
+       function exportExcelChaopi(){
+           var startTime = $("#line_datetimepicker_start").val();
+           var endTime = $("#line_datetimepicker_end").val();
+           
+           $("#startTime").val(startTime);
+           $("#endTime").val(endTime);
+           $("#exportExcel").submit();
+          // $.get("${request.contextPath}/load_chaopi_data",{
+           
+       }
 
      
 

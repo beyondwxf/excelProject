@@ -1,4 +1,5 @@
 com\hexun\zh\datafilter\common\utils\DateStyle.class
+com\hexun\zh\datafilter\common\utils\CsvCPUtils.class
 com\hexun\zh\datafilter\common\utils\AssertUtils.class
 com\hexun\zh\datafilter\common\utils\http\HttpClientUtils.class
 com\hexun\zh\datafilter\common\enums\RedPacketTypeEnum.class

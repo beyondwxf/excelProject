@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1527523296964_0" label="datafilter-root" name="datafilter-root">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/datafilter-dao" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/datafilter-web" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/datafilter-entity" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/datafilter-service" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/datafilter-root" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/datafilter-common" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1527525430176_1" label="Window Working Set" name="Aggregate for window 1527525430175"/>
+</workingSetManager>

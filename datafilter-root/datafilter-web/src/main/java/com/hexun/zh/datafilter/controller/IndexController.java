@@ -3,6 +3,7 @@ package com.hexun.zh.datafilter.controller;
 import com.hexun.zh.datafilter.common.controller.DefaultBaseController;
 import com.hexun.zh.datafilter.common.page.Page;
 import com.hexun.zh.datafilter.common.utils.BaseResponse;
+import com.hexun.zh.datafilter.common.utils.ExcelCPUtils;
 import com.hexun.zh.datafilter.common.utils.StringUtils;
 import com.hexun.zh.datafilter.entity.Feedback;
 import com.hexun.zh.datafilter.service.DataFilterService;
@@ -18,7 +19,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -104,11 +109,18 @@ public class IndexController extends DefaultBaseController {
 	 * @throws Exception
 	 */
 	@RequestMapping(value="export_chaopi_data",method={RequestMethod.GET,RequestMethod.POST})
-	public 	@ResponseBody BaseResponse exportChaoPiData(HttpServletRequest req){
-		
-		List<List<Map<String,Object>>>  datelist = inventoryStatisticsService.queryExportExcelData(req);
-		System.out.println(datelist.toString());
-		return null;
+	public void exportChaoPiData(HttpServletRequest req,HttpServletResponse response) throws Exception{
+		 ServletOutputStream out = response.getOutputStream();
+		List<Map<String,Object>> datelist = inventoryStatisticsService.queryExportExcelData(req);
+		System.out.println("datelist.get(0):"+datelist.get(0).toString());
+		System.out.println("datelist.get(0).sheetName:"+datelist.get(0).get("sheetName"));
+		System.out.println("datelist.get(0).titleName:"+datelist.get(0).get("titleName"));
+		System.out.println("datelist.get(0).dataList:"+datelist.get(0).get("dataList"));
+//		System.out.println("datelist.get(0).get(0):"+datelist.get(0).get(0).toString());
+		String fileName = "daochumingzi";
+		ExcelCPUtils.export(req,response, fileName, datelist.get(0).get("sheetName").toString(), (List)datelist.get(0).get("titleName"),(List<List>)datelist.get(0).get("dataList"));
+		System.out.println("datelist:"+datelist.toString());
+//		return null;
 	}
 	
 	/**

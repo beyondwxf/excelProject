@@ -222,7 +222,7 @@ public  class  InventoryStatisticsServiceImpl implements InventoryStatisticsServ
 	}
 
 	@Override
-	public  List<List<Map<String,Object>>> queryExportExcelData(HttpServletRequest req) {
+	public List<Map<String,Object>> queryExportExcelData(HttpServletRequest req) {
 		String startTime = req.getParameter("startTime");
 		String endTime = req.getParameter("endTime");
 		 if(StringUtils.isBlank(startTime)){
@@ -233,12 +233,13 @@ public  class  InventoryStatisticsServiceImpl implements InventoryStatisticsServ
 	            log.info("结束时间为空");
 	            return null;
 	        }
-	        List<List<Map<String,Object>>> excelExportList = new ArrayList<>();
+//	        List<List<Map<String,Object>>> excelExportList = new ArrayList<>();
+	        List<Map<String,Object>> excelExportSheetList = excelExportSheetList = new ArrayList<>();
 	        List<Map<String,Object>> sheetNamelist = inventory_statisticsMapper.findInventoryStatisticsDistinctSheetName(startTime,endTime,null); 
 	        for(Map<String,Object> mapSheetName : sheetNamelist){
 	        	System.out.println(mapSheetName.get("sheetName"));
 	        	String sheetName = mapSheetName.get("sheetName").toString();
-	        	List<Map<String,Object>> excelExportSingleList = new ArrayList<>();
+	        	
 	        	Map<String,Object> map = new HashMap<>();
 	        	map.put("sheetName", sheetName);
 	        	int titleNum = 0;
@@ -258,7 +259,7 @@ public  class  InventoryStatisticsServiceImpl implements InventoryStatisticsServ
 		  	             			String productCoding = productList.get(0).get("productCoding").toString();
 		  	             			String productName = productList.get(0).get("productName").toString();
 		  	             			excelProduct = new ArrayList<>();
-		  	             			excelProduct.add(serialNumber);
+		  	             			excelProduct.add(serialNumber.toString());
 		  	             			excelProduct.add(productCoding);
 		  	             			excelProduct.add(productName);
 		  	             		}
@@ -296,13 +297,13 @@ public  class  InventoryStatisticsServiceImpl implements InventoryStatisticsServ
 		        	   }
 		        	    map.put("titleName",titleNameList);
 		        	   
-		        		map.put("sheetList", sheetDataList);
-		        		excelExportSingleList.add(map);
+		        		map.put("dataList", sheetDataList);
+		        		excelExportSheetList.add(map);
 	        	 }
 	        	 
-	        	 excelExportList.add(excelExportSingleList);
+//	        	 excelExportList.add(excelExportSingleList);
 	        }
-		return excelExportList;
+		return excelExportSheetList;
 	}
     
 }
