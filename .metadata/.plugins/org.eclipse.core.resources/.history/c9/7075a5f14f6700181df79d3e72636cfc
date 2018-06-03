@@ -76,7 +76,7 @@
                 </div>
             </div>
             
-            <form id="exportExcel" action="${request.contextPath}/export_chaopi_data" method="post">
+            <form id="exportExcel" action="${request.contextPath}/export_chaopi_data">
 	            <input type="hidden" name="startTime" id="startTime"/>
 	            <input type="hidden" name="endTime" id="endTime"/>
 	            <input type="hidden" name="fileName" id="fileName"/>
@@ -167,8 +167,8 @@
           
           
        function exportExcelChaopi(){
-           var startTime = $("#line_datetimepicker_start").val().replace(/-/g,"");
-           var endTime = $("#line_datetimepicker_end").val().replace(/-/g,"");
+           var startTime = $("#line_datetimepicker_start").val();
+           var endTime = $("#line_datetimepicker_end").val();
            
            var fileName = $("#fileNameSelect").val();
            

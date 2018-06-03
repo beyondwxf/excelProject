@@ -76,7 +76,7 @@
                 </div>
             </div>
             
-            <form id="exportExcel" action="${request.contextPath}/export_chaopi_data" method="post">
+            <form id="exportExcel" action="${request.contextPath}/export_chaopi_data">
 	            <input type="hidden" name="startTime" id="startTime"/>
 	            <input type="hidden" name="endTime" id="endTime"/>
 	            <input type="hidden" name="fileName" id="fileName"/>

@@ -4882,3 +4882,315 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: expected > 
 2018-06-03 23:53:43,544 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2018-06-03 23:53:43,545 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2018-06-03 23:53:43,546 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\test\resources
+2018-06-04 00:05:24,737 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:05:24,737 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\main\webapp
+2018-06-04 00:05:24,737 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-06-04 00:05:24,745 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:05:24,747 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:05:24,747 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\test\resources
+2018-06-04 00:05:29,267 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:05:29,267 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\main\webapp
+2018-06-04 00:05:29,267 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-06-04 00:05:29,269 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:05:29,270 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:05:29,270 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\test\resources
+2018-06-04 00:05:34,413 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:05:34,413 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\main\webapp
+2018-06-04 00:05:34,414 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-06-04 00:05:34,416 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:05:34,417 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:05:34,417 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\test\resources
+2018-06-04 00:06:17,118 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:06:17,118 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\main\webapp
+2018-06-04 00:06:17,119 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-06-04 00:06:17,123 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:06:17,125 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:06:17,125 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\test\resources
+2018-06-04 00:06:47,912 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:06:47,912 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\main\webapp
+2018-06-04 00:06:47,913 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-06-04 00:06:47,916 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:06:47,917 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:06:47,917 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\test\resources
+2018-06-04 00:07:06,290 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:07:06,290 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\main\webapp
+2018-06-04 00:07:06,291 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-06-04 00:07:06,295 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:07:06,296 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:07:06,296 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\test\resources
+2018-06-04 00:08:00,903 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:08:00,903 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\main\webapp
+2018-06-04 00:08:00,903 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-06-04 00:08:00,905 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:08:00,905 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:08:00,905 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\test\resources
+2018-06-04 00:08:13,892 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:08:13,892 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\main\webapp
+2018-06-04 00:08:13,892 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-06-04 00:08:13,894 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:08:13,895 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:08:13,895 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\test\resources
+2018-06-04 00:08:35,710 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:08:35,710 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\main\webapp
+2018-06-04 00:08:35,711 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-06-04 00:08:35,718 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:08:35,720 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:08:35,721 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\test\resources
+2018-06-04 00:08:50,058 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:08:50,058 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\main\webapp
+2018-06-04 00:08:50,059 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-06-04 00:08:50,063 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:08:50,064 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:08:50,064 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\test\resources
+2018-06-04 00:09:28,362 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:09:28,362 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\main\webapp
+2018-06-04 00:09:28,362 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-06-04 00:09:28,364 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:09:28,365 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:09:28,365 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\test\resources
+2018-06-04 00:11:05,438 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:11:05,438 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\main\webapp
+2018-06-04 00:11:05,438 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-06-04 00:11:05,441 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:11:05,442 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:11:05,442 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\test\resources
+2018-06-04 00:13:51,086 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:13:51,087 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\main\webapp
+2018-06-04 00:13:51,087 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-06-04 00:13:51,097 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:13:51,098 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:13:51,098 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\test\resources
+2018-06-04 00:13:55,667 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:13:55,667 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\main\webapp
+2018-06-04 00:13:55,668 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-06-04 00:13:55,672 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:13:55,675 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:13:55,675 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\test\resources
+2018-06-04 00:14:00,253 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:14:00,253 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\main\webapp
+2018-06-04 00:14:00,254 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-06-04 00:14:00,261 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:14:00,263 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:14:00,264 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\test\resources
+2018-06-04 00:14:05,527 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:14:05,527 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\main\webapp
+2018-06-04 00:14:05,527 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-06-04 00:14:05,530 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:14:05,531 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:14:05,531 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\test\resources
+2018-06-04 00:14:11,922 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:14:11,922 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\main\webapp
+2018-06-04 00:14:11,922 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-06-04 00:14:11,924 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:14:11,925 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:14:11,925 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\test\resources
+2018-06-04 00:14:16,954 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:14:16,954 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\main\webapp
+2018-06-04 00:14:16,955 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-06-04 00:14:16,958 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:14:16,959 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:14:16,959 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-dao\src\test\resources
+2018-06-04 00:17:38,558 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:17:38,558 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\webapp
+2018-06-04 00:17:38,558 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\resources
+2018-06-04 00:17:38,559 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:17:38,560 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:17:38,560 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\test\resources
+2018-06-04 00:17:54,854 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:17:54,854 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\webapp
+2018-06-04 00:17:54,854 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\resources
+2018-06-04 00:17:54,855 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:17:54,855 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:17:54,855 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\test\resources
+2018-06-04 00:17:57,977 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:17:57,977 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\webapp
+2018-06-04 00:17:57,977 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\resources
+2018-06-04 00:17:57,978 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:17:57,979 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:17:57,979 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\test\resources
+2018-06-04 00:19:06,786 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:19:06,786 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\webapp
+2018-06-04 00:19:06,786 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\resources
+2018-06-04 00:19:06,787 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:19:06,787 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:19:06,788 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\test\resources
+2018-06-04 00:19:11,466 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:19:11,466 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\webapp
+2018-06-04 00:19:11,466 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\resources
+2018-06-04 00:19:11,467 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:19:11,469 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:19:11,469 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\test\resources
+2018-06-04 00:28:45,446 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:28:45,446 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\webapp
+2018-06-04 00:28:45,446 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\resources
+2018-06-04 00:28:45,447 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:28:45,448 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:28:45,448 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\test\resources
+2018-06-04 00:29:03,030 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:29:03,030 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\webapp
+2018-06-04 00:29:03,030 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\resources
+2018-06-04 00:29:03,031 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:29:03,032 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:29:03,032 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\test\resources
+2018-06-04 00:29:18,876 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:29:18,876 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\webapp
+2018-06-04 00:29:18,876 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\resources
+2018-06-04 00:29:18,877 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:29:18,877 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:29:18,877 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\test\resources
+2018-06-04 00:29:30,676 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:29:30,676 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\webapp
+2018-06-04 00:29:30,676 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\resources
+2018-06-04 00:29:30,677 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:29:30,677 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:29:30,677 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\test\resources
+2018-06-04 00:30:12,419 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:30:12,420 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\webapp
+2018-06-04 00:30:12,420 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\resources
+2018-06-04 00:30:12,421 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:30:12,421 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:30:12,421 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\test\resources
+2018-06-04 00:32:10,625 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:32:10,625 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\webapp
+2018-06-04 00:32:10,625 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\resources
+2018-06-04 00:32:10,626 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:32:10,627 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:32:10,627 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\test\resources
+2018-06-04 00:32:13,980 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:32:13,980 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\webapp
+2018-06-04 00:32:13,980 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\resources
+2018-06-04 00:32:13,981 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:32:13,982 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:32:13,982 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\test\resources
+2018-06-04 00:32:38,579 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:32:38,579 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\webapp
+2018-06-04 00:32:38,579 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\resources
+2018-06-04 00:32:38,580 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:32:38,580 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:32:38,580 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\test\resources
+2018-06-04 00:33:20,310 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:33:20,310 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\webapp
+2018-06-04 00:33:20,310 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\resources
+2018-06-04 00:33:20,311 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:33:20,312 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:33:20,312 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\test\resources
+2018-06-04 00:34:34,622 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:34:34,622 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\webapp
+2018-06-04 00:34:34,622 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\resources
+2018-06-04 00:34:34,623 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:34:34,623 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:34:34,623 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\test\resources
+2018-06-04 00:34:48,259 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:34:48,259 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\webapp
+2018-06-04 00:34:48,259 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\resources
+2018-06-04 00:34:48,260 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:34:48,260 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:34:48,260 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\test\resources
+2018-06-04 00:34:52,383 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:34:52,383 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\webapp
+2018-06-04 00:34:52,383 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\resources
+2018-06-04 00:34:52,384 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:34:52,384 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:34:52,384 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\test\resources
+2018-06-04 00:37:50,581 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:37:50,581 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\main\webapp
+2018-06-04 00:37:50,581 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\main\resources
+2018-06-04 00:37:50,583 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:37:50,584 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:37:50,584 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\test\resources
+2018-06-04 00:37:58,070 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:37:58,070 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\main\webapp
+2018-06-04 00:37:58,070 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\main\resources
+2018-06-04 00:37:58,071 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:37:58,072 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:37:58,072 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\test\resources
+2018-06-04 00:38:34,353 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:38:34,353 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\main\webapp
+2018-06-04 00:38:34,353 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\main\resources
+2018-06-04 00:38:34,355 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:38:34,356 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:38:34,356 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\test\resources
+2018-06-04 00:39:35,994 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:39:35,994 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\main\webapp
+2018-06-04 00:39:35,994 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\main\resources
+2018-06-04 00:39:35,996 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:39:35,997 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:39:35,997 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\test\resources
+2018-06-04 00:39:43,834 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:39:43,834 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\main\webapp
+2018-06-04 00:39:43,834 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\main\resources
+2018-06-04 00:39:43,836 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:39:43,837 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:39:43,837 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\test\resources
+2018-06-04 00:41:17,949 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:41:17,955 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 64 resources
+2018-06-04 00:41:17,965 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2018-06-04 00:41:17,970 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:41:17,973 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:41:17,973 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-web\src\test\resources
+2018-06-04 00:42:35,046 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:42:35,046 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\main\webapp
+2018-06-04 00:42:35,046 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\main\resources
+2018-06-04 00:42:35,048 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:42:35,049 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:42:35,049 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\test\resources
+2018-06-04 00:46:23,753 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:46:23,753 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\main\webapp
+2018-06-04 00:46:23,753 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\main\resources
+2018-06-04 00:46:23,757 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:46:23,758 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:46:23,758 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\test\resources
+2018-06-04 00:46:51,940 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:46:51,940 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\main\webapp
+2018-06-04 00:46:51,940 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\main\resources
+2018-06-04 00:46:51,942 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:46:51,944 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:46:51,945 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\test\resources
+2018-06-04 00:47:20,206 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:47:20,206 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\main\webapp
+2018-06-04 00:47:20,206 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\main\resources
+2018-06-04 00:47:20,208 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:47:20,208 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:47:20,208 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\test\resources
+2018-06-04 00:48:27,085 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:48:27,086 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\main\webapp
+2018-06-04 00:48:27,086 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\main\resources
+2018-06-04 00:48:27,088 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:48:27,089 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:48:27,089 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\test\resources
+2018-06-04 00:49:17,922 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:49:17,923 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\main\webapp
+2018-06-04 00:49:17,923 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\main\resources
+2018-06-04 00:49:17,927 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:49:17,929 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:49:17,929 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-common\src\test\resources
+2018-06-04 00:51:36,832 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:51:36,832 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\webapp
+2018-06-04 00:51:36,832 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\resources
+2018-06-04 00:51:36,833 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:51:36,834 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:51:36,834 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\test\resources
+2018-06-04 00:51:50,886 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:51:50,886 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\webapp
+2018-06-04 00:51:50,886 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\resources
+2018-06-04 00:51:50,889 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:51:50,891 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:51:50,891 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\test\resources
+2018-06-04 00:51:54,067 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:51:54,068 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\webapp
+2018-06-04 00:51:54,068 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\resources
+2018-06-04 00:51:54,069 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:51:54,070 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:51:54,070 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\test\resources
+2018-06-04 00:52:20,571 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:52:20,572 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\webapp
+2018-06-04 00:52:20,572 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\resources
+2018-06-04 00:52:20,572 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:52:20,573 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:52:20,573 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\test\resources
+2018-06-04 00:52:29,384 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:52:29,385 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\webapp
+2018-06-04 00:52:29,385 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\main\resources
+2018-06-04 00:52:29,386 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-04 00:52:29,386 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-06-04 00:52:29,387 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\eclipseWorkSpace\github\excelProject\datafilter-root\datafilter-service\src\test\resources

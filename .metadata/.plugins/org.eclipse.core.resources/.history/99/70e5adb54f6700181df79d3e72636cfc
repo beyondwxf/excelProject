@@ -76,7 +76,7 @@
                 </div>
             </div>
             
-            <form id="exportExcel" action="${request.contextPath}/export_chaopi_data" method="post">
+            <form id="exportExcel" action="${request.contextPath}/export_chaopi_data">
 	            <input type="hidden" name="startTime" id="startTime"/>
 	            <input type="hidden" name="endTime" id="endTime"/>
 	            <input type="hidden" name="fileName" id="fileName"/>
@@ -119,7 +119,7 @@
       function init_timer(){
           $('.timer').datetimepicker({
               language:  'zh-CN',
-              format: 'yyyy-mm-dd',
+              format: 'yyyymmdd',
               autoclose: true,
               minView: "month" //选择日期后，不会再跳转去选择时分秒
           });
@@ -129,8 +129,8 @@
        * 加载查询数据
        */
        function queryChaopi(){
-           var startTime = $("#line_datetimepicker_start").val().replace(/-/g,"");
-           var endTime = $("#line_datetimepicker_end").val().replace(/-/g,"");
+           var startTime = $("#line_datetimepicker_start").val();
+           var endTime = $("#line_datetimepicker_end").val();
           // $.get("${request.contextPath}/load_chaopi_data",{
            
         $.get("${request.contextPath}/export_chaopi_data",{
@@ -151,8 +151,8 @@
         * 加载查询select数据
         */
         function loadSelect(){
-            var startTime = $("#line_datetimepicker_start").val().replace(/-/g,"");
-            var endTime = $("#line_datetimepicker_end").val().replace(/-/g,"");
+            var startTime = $("#line_datetimepicker_start").val();
+            var endTime = $("#line_datetimepicker_end").val();
          $.get("${request.contextPath}/select_chaopi_data",function (data) {
                 if(data.respCode == 'T'){
                    $("#fileNameSelect").find("option").remove(); 
@@ -167,8 +167,8 @@
           
           
        function exportExcelChaopi(){
-           var startTime = $("#line_datetimepicker_start").val().replace(/-/g,"");
-           var endTime = $("#line_datetimepicker_end").val().replace(/-/g,"");
+           var startTime = $("#line_datetimepicker_start").val();
+           var endTime = $("#line_datetimepicker_end").val();
            
            var fileName = $("#fileNameSelect").val();
            
