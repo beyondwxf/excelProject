@@ -127,10 +127,10 @@ public class IndexController extends DefaultBaseController {
 	public void exportChaoPiData(HttpServletRequest req,HttpServletResponse response) throws Exception{
 		 ServletOutputStream out = response.getOutputStream();
 		List<Map<String,Object>> datelist = inventoryStatisticsService.queryExportExcelData(req);
-		System.out.println("datelist.get(0):"+datelist.get(0).toString());
-		System.out.println("datelist.get(0).sheetName:"+datelist.get(0).get("sheetName"));
-		System.out.println("datelist.get(0).titleName:"+datelist.get(0).get("titleName"));
-		System.out.println("datelist.get(0).dataList:"+datelist.get(0).get("dataList"));
+//		System.out.println("datelist.get(0):"+datelist.get(0).toString());
+//		System.out.println("datelist.get(0).sheetName:"+datelist.get(0).get("sheetName"));
+//		System.out.println("datelist.get(0).titleName:"+datelist.get(0).get("titleName"));
+//		System.out.println("datelist.get(0).dataList:"+datelist.get(0).get("dataList"));
 //		System.out.println("datelist.get(0).get(0):"+datelist.get(0).get(0).toString());
 //		String fileName = "daochumingzi";
 		String fileName = req.getParameter("fileName");

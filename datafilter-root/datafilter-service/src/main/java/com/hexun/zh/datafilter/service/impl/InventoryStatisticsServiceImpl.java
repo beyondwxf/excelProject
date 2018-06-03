@@ -308,6 +308,38 @@ public  class  InventoryStatisticsServiceImpl implements InventoryStatisticsServ
 		        		excelExportSheetList.add(map);
 	        	 }
 	        	 
+	        	 //查询不符合条件的数据
+	        	 List<Map<String,Object>>	inconformitDataList =  inventory_statisticsMapper.inconformityData(startTime, endTime, fileName, sheetName);
+	        	 List excelInconformitProduct = null;
+	        	 List excelInconformitList = new ArrayList();
+	        	 for(Map<String,Object> inconformitData : inconformitDataList){
+	        		    excelInconformitProduct = new ArrayList();
+	        		    String serialNumber = inconformitData.get("serialNumber").toString();
+	                	String productCoding = inconformitData.get("productCoding").toString();
+	                	String productName = inconformitData.get("productName").toString();
+	                	String productInventory = inconformitData.get("productInventory").toString();
+	                	String productEffectiveTimeDec = inconformitData.get("productEffectiveTimeDec").toString();
+	                	String effectiveTime = inconformitData.get("effectiveTime").toString();
+	                	
+	                	excelInconformitProduct.add(serialNumber);
+	                	excelInconformitProduct.add(productCoding);
+	                	excelInconformitProduct.add(productName);
+	                	excelInconformitProduct.add(productInventory);
+	                	excelInconformitProduct.add(productEffectiveTimeDec);
+	                	excelInconformitProduct.add(effectiveTime);
+	                	excelInconformitList.add(excelInconformitProduct);
+	                	
+		  	      	 }
+		        	 List inconformitTitle = new ArrayList();
+		        	 inconformitTitle.add("编码");
+		        	 inconformitTitle.add("条码");
+		        	 inconformitTitle.add("名称");
+		        	 inconformitTitle.add("数量");
+		        	 inconformitTitle.add("效期");
+		        	 inconformitTitle.add("效期转换时间");
+	        		map.put("inconformitDataList", excelInconformitList);
+	        		map.put("inconformitSheetName", sheetName+"__无效数据");
+	        		map.put("inconformitTitle", inconformitTitle);
 	        }
 		return excelExportSheetList;
 	}
