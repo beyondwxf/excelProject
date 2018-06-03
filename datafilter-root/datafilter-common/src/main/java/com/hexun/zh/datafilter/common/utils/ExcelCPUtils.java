@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -434,6 +435,154 @@ public class ExcelCPUtils {
 				sheet.setColumnWidth(colNum, (columnWidth + 4) * 256);
 //			}
 		}
+		if (workbook != null) {
+			// try{
+			// workbook.write(out);
+			// 第六步，输出Excel文件
+			// String fileName = new SimpleDateFormat("yyyyMMdd").format(new Date()) + "_" +
+			// excelExportEnum.getTypeName() +".xls";
+			outWrite(request, response, workbook, fileName);
+			// }catch (IOException e) {
+			// e.printStackTrace();
+			// }
+		}
+
+		// }catch(Exception e){
+		// e.printStackTrace();
+		// }
+		// finally{
+		// out.close();
+		// }
+
+	}
+	
+	/**
+	 * 导出数据
+	 * 
+	 * @param out
+	 *            输出流
+	 * @param fileName
+	 *            文件名
+	 * @param sheetTitle
+	 *            sheet名称
+	 * @param rowName
+	 *            excel抬头
+	 * @param dataList
+	 *            数据
+	 * @return
+	 * @throws Exception
+	 */
+	/**
+	 * 
+	 * @param request
+	 * @param response
+	 * @param fileName
+	 * @param datelist
+	 * @throws Exception
+	 */
+	public static void export(HttpServletRequest request, HttpServletResponse response, String fileName, List<Map<String,Object>> exportDatalist) throws Exception {
+		// try{
+		HSSFWorkbook workbook = new HSSFWorkbook(); // 创建工作簿对象
+		for (int x = 0; x < exportDatalist.size(); x++) {
+			String sheetName = exportDatalist.get(x).get("sheetName").toString();
+			List titleName = (List) exportDatalist.get(x).get("titleName");
+			List<List> dataList = (List) exportDatalist.get(x).get("dataList");
+			
+			
+			
+			HSSFSheet sheet = workbook.createSheet(sheetName); // 创建工作表
+
+			// 产生表格标题行
+			// HSSFRow rowm = sheet.createRow(0);
+			// HSSFCell cellTiltle = rowm.createCell(0);
+
+			// sheet样式定义【getColumnTopStyle()/getStyle()均为自定义方法 - 在下面 - 可扩展】
+			HSSFCellStyle columnTopStyle = getColumnTopStyle(workbook);// 获取列头样式对象
+			HSSFCellStyle style = getStyle(workbook); // 单元格样式对象
+
+			// sheet.addMergedRegion(new CellRangeAddress(0, 1, 0,
+			// (rowName.length-1)));//合并单元格
+			// cellTiltle.setCellStyle(columnTopStyle);
+			// cellTiltle.setCellValue(title);
+
+			// 定义所需列数
+			int columnNum = titleName.size();
+			HSSFRow rowRowName = sheet.createRow(0); // 在索引2的位置创建行(最顶端的行开始的第二行)
+
+			// 将列头设置到sheet的单元格中
+			for (int n = 0; n < columnNum; n++) {
+				HSSFCell cellRowName = rowRowName.createCell(n); // 创建列头对应个数的单元格
+				cellRowName.setCellType(HSSFCell.CELL_TYPE_STRING); // 设置列头单元格的数据类型
+				HSSFRichTextString text = new HSSFRichTextString(titleName.get(n).toString());
+				cellRowName.setCellValue(text); // 设置列头单元格的值
+				cellRowName.setCellStyle(columnTopStyle); // 设置列头单元格样式
+			}
+
+			// 将查询出的数据设置到sheet对应的单元格中
+			for (int i = 0; i < dataList.size(); i++) {
+
+				List objList = dataList.get(i);// 遍历每个对象
+				HSSFRow row = sheet.createRow(i + 1);// 创建所需的行数（从第二行开始写数据）
+
+				for (int j = 0; j < objList.size(); j++) {
+					HSSFCell cell = null; // 设置单元格的数据类型
+//					if (j == 0) {
+//						cell = row.createCell(j, HSSFCell.CELL_TYPE_NUMERIC);
+//						cell.setCellValue(i + 1);
+//					} else {
+						cell = row.createCell(j, HSSFCell.CELL_TYPE_STRING);
+						System.out.println("objList:"+j+":"+objList.get(j));
+						if (!"".equals(objList.get(j)) && objList.get(j) != null) {
+							cell.setCellValue(objList.get(j).toString()); // 设置单元格的值
+						}
+//					}
+					cell.setCellStyle(style); // 设置单元格样式
+				}
+			}
+			// 让列宽随着导出的列长自动适应
+			for (int colNum = 0; colNum < columnNum; colNum++) {
+				int columnWidth = sheet.getColumnWidth(colNum) / 256;
+				for (int rowNum = 0; rowNum < sheet.getLastRowNum(); rowNum++) {
+					HSSFRow currentRow;
+					// 当前行未被使用过
+					if (sheet.getRow(rowNum) == null) {
+						currentRow = sheet.createRow(rowNum);
+					} else {
+						currentRow = sheet.getRow(rowNum);
+					}
+					// if (currentRow.getCell(colNum) != null) {
+					// HSSFCell currentCell = currentRow.getCell(colNum);
+					// if (currentCell.getCellType() == HSSFCell.CELL_TYPE_STRING) {
+					// int length = currentCell.getStringCellValue().getBytes().length;
+					// if (columnWidth < length) {
+					// columnWidth = length;
+					// }
+					// }
+					// }
+					if (currentRow.getCell(colNum) != null) {
+						HSSFCell currentCell = currentRow.getCell(colNum);
+						if (currentCell.getCellType() == HSSFCell.CELL_TYPE_STRING) {
+							int length = 0;
+							try {
+								length = currentCell.getStringCellValue().getBytes().length;
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+							if (columnWidth < length) {
+								columnWidth = length;
+							}
+						}
+					}
+
+				}
+//				if (colNum == 0) {
+//					sheet.setColumnWidth(colNum, (columnWidth - 2) * 256);
+//				} else {
+					sheet.setColumnWidth(colNum, (columnWidth + 4) * 256);
+//				}
+			}
+		}
+	
 		if (workbook != null) {
 			// try{
 			// workbook.write(out);

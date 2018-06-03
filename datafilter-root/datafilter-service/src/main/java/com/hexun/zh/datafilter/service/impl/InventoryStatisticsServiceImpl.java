@@ -47,7 +47,7 @@ public  class  InventoryStatisticsServiceImpl implements InventoryStatisticsServ
      * @param normalFile
      */
     @Override
-    public void importChaoPiExcel(File normalFile) throws Exception {
+    public void importChaoPiExcel(File normalFile,String realFileName) throws Exception {
 
         List<List<Object>> list = null;
         // 1、判断文件类型
@@ -65,7 +65,7 @@ public  class  InventoryStatisticsServiceImpl implements InventoryStatisticsServ
         }
         List<Object[]> params = new ArrayList<>();
 
-        String sql = "INSERT INTO `inventory_statistics` (`id`, `sheetName`,`serialNumber`, `productCoding`, `productName`, `productInventory`, `productEffectiveTimeDec`, `effectiveTime`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO `inventory_statistics` (`id`, `fileName`,`sheetName`,`serialNumber`, `productCoding`, `productName`, `productInventory`, `productEffectiveTimeDec`, `effectiveTime`) VALUES (?, ?,?, ?, ?, ?, ?, ?, ?)";
         for(List<Object> rows : list){
 
 //            Date date = DateUtils.toDate(rows.get(0).toString(),"yyyy/MM/dd");
@@ -73,7 +73,9 @@ public  class  InventoryStatisticsServiceImpl implements InventoryStatisticsServ
 //            rows.add(0,date);
         	String s = UUID.randomUUID().toString();
         	System.out.println(s);
-            rows.add(0,s.replaceAll("-",""));
+        	 rows.add(0,s.replaceAll("-",""));
+        	 rows.add(1,realFileName);
+            
 
             Object[] os = rows.toArray(new Object[rows.size()]);
             params.add(os);

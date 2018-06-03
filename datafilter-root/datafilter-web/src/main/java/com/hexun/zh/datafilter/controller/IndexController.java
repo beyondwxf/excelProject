@@ -24,6 +24,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -117,8 +119,10 @@ public class IndexController extends DefaultBaseController {
 		System.out.println("datelist.get(0).titleName:"+datelist.get(0).get("titleName"));
 		System.out.println("datelist.get(0).dataList:"+datelist.get(0).get("dataList"));
 //		System.out.println("datelist.get(0).get(0):"+datelist.get(0).get(0).toString());
-		String fileName = "daochumingzi";
-		ExcelCPUtils.export(req,response, fileName, datelist.get(0).get("sheetName").toString(), (List)datelist.get(0).get("titleName"),(List<List>)datelist.get(0).get("dataList"));
+//		String fileName = "daochumingzi";
+		 String fileName = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()) + "_" +".xls";
+//		ExcelCPUtils.export(req,response, fileName, datelist.get(0).get("sheetName").toString(), (List)datelist.get(0).get("titleName"),(List<List>)datelist.get(0).get("dataList"));
+		ExcelCPUtils.export(req,response, fileName,datelist);
 		System.out.println("datelist:"+datelist.toString());
 //		return null;
 	}

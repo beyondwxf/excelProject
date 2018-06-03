@@ -3,6 +3,7 @@ package com.hexun.zh.datafilter.controller;
 import java.io.File;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -10,6 +11,9 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -101,9 +105,10 @@ public class UploadController {
 	public @ResponseBody Map<String, Object> upload_chaopi(HttpServletRequest request, HttpServletResponse response, @RequestParam("localFile") MultipartFile attachFile){
 
 		Map<String, Object> jsonMap=new HashMap<String, Object>();
-		
         //上传文件后缀名称
-		String extendName = attachFile.getOriginalFilename().substring(attachFile.getOriginalFilename().lastIndexOf("."));
+        String extendName = attachFile.getOriginalFilename().substring(attachFile.getOriginalFilename().lastIndexOf("."));
+        String fileName =  attachFile.getOriginalFilename().substring(0, attachFile.getOriginalFilename().indexOf("."));
+        
 		//新文件名称
 		String newFileName = UUID.randomUUID().toString() + extendName;
 
@@ -131,7 +136,7 @@ public class UploadController {
 			jsonMap.put("url", normalFile);
 
 			// 操作excel
-			inventoryStatisticsService.importChaoPiExcel(normalFile);
+			inventoryStatisticsService.importChaoPiExcel(normalFile,fileName);
 
 			logger.info("上传成功，返回参数：{}", JSON.toJSONString(jsonMap));
 		} catch (Exception e) {

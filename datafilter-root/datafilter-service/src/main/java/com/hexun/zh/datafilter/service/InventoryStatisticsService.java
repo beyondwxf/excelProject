@@ -16,7 +16,7 @@ public interface InventoryStatisticsService {
      * chaop_excel数据导入数据库
      * @param normalFile
      */
-    void importChaoPiExcel(File normalFile) throws Exception;
+    void importChaoPiExcel(File normalFile,String realFileName) throws Exception;
 //    /**
 //     * 分组统计查询
 //     * @param startTime
