@@ -49,14 +49,14 @@
                     <div class="form-inline">
                         开始时间：
                         <div class="input-group date col-xs-3" id="time">
-                            <input type="text" class="form-control timer" value="20140627"  id="line_datetimepicker_start">
+                            <input type="text" class="form-control timer" value="2014-06-27"  id="line_datetimepicker_start">
                                 <span class="input-group-addon">
                               <span class="glyphicon glyphicon-calendar"></span>
                             </span>
                         </div>
                         &nbsp;&nbsp;结束时间：
                         <div class="input-group date col-xs-3" id="time">
-                            <input type="text" class="form-control timer" value="20230703" id="line_datetimepicker_end">
+                            <input type="text" class="form-control timer" value="2023-07-03" id="line_datetimepicker_end">
                             <span class="input-group-addon">
                               <span class="glyphicon glyphicon-calendar"></span>
                             </span>
@@ -76,7 +76,7 @@
                 </div>
             </div>
             
-            <form id="exportExcel" action="${request.contextPath}/export_chaopi_data">
+            <form id="exportExcel" action="${request.contextPath}/export_chaopi_data" method="post">
 	            <input type="hidden" name="startTime" id="startTime"/>
 	            <input type="hidden" name="endTime" id="endTime"/>
 	            <input type="hidden" name="fileName" id="fileName"/>
@@ -119,7 +119,7 @@
       function init_timer(){
           $('.timer').datetimepicker({
               language:  'zh-CN',
-              format: 'yyyymmdd',
+              format: 'yyyy-mm-dd',
               autoclose: true,
               minView: "month" //选择日期后，不会再跳转去选择时分秒
           });
@@ -129,8 +129,8 @@
        * 加载查询数据
        */
        function queryChaopi(){
-           var startTime = $("#line_datetimepicker_start").val();
-           var endTime = $("#line_datetimepicker_end").val();
+           var startTime = $("#line_datetimepicker_start").val().replace(/-/g,"");
+           var endTime = $("#line_datetimepicker_end").val().replace(/-/g,"");
           // $.get("${request.contextPath}/load_chaopi_data",{
            
         $.get("${request.contextPath}/export_chaopi_data",{
@@ -151,8 +151,8 @@
         * 加载查询select数据
         */
         function loadSelect(){
-            var startTime = $("#line_datetimepicker_start").val();
-            var endTime = $("#line_datetimepicker_end").val();
+            var startTime = $("#line_datetimepicker_start").val().replace(/-/g,"");
+            var endTime = $("#line_datetimepicker_end").val().replace(/-/g,"");
          $.get("${request.contextPath}/select_chaopi_data",function (data) {
                 if(data.respCode == 'T'){
                    $("#fileNameSelect").find("option").remove(); 
@@ -167,14 +167,19 @@
           
           
        function exportExcelChaopi(){
-           var startTime = $("#line_datetimepicker_start").val();
-           var endTime = $("#line_datetimepicker_end").val();
+           var startTime = $("#line_datetimepicker_start").val().replace(/-/g,"");
+           var endTime = $("#line_datetimepicker_end").val().replace(/-/g,"");
            
            var fileName = $("#fileNameSelect").val();
            
            $("#startTime").val(startTime);
            $("#endTime").val(endTime);
            $("#fileName").val(fileName);
+           
+           if(null == fileName || $.trim(fileName).length<1){
+        	   alert("请先选择要导出的文件!");
+        	   return ;
+           }
            $("#exportExcel").submit();
           // $.get("${request.contextPath}/load_chaopi_data",{
            
