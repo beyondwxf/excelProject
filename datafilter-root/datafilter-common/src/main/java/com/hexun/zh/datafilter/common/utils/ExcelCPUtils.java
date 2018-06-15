@@ -88,7 +88,7 @@ public class ExcelCPUtils {
 			}
 
 			// 遍历当前sheet中的所有行
-			for (int j = sheet.getFirstRowNum() + 1; j < sheet.getLastRowNum(); j++) {
+			for (int j = sheet.getFirstRowNum() + 1; j < sheet.getLastRowNum()+1; j++) {
 				row = sheet.getRow(j);
 				if (row == null || row.getFirstCellNum() == j) {
 					continue;
@@ -401,7 +401,7 @@ public class ExcelCPUtils {
 		// 让列宽随着导出的列长自动适应
 		for (int colNum = 0; colNum < columnNum; colNum++) {
 			int columnWidth = sheet.getColumnWidth(colNum) / 256;
-			for (int rowNum = 0; rowNum < sheet.getLastRowNum(); rowNum++) {
+			for (int rowNum = 0; rowNum < sheet.getLastRowNum()+1; rowNum++) {
 				HSSFRow currentRow;
 				// 当前行未被使用过
 				if (sheet.getRow(rowNum) == null) {
@@ -547,7 +547,7 @@ public class ExcelCPUtils {
 			// 让列宽随着导出的列长自动适应
 			for (int colNum = 0; colNum < columnNum; colNum++) {
 				int columnWidth = sheet.getColumnWidth(colNum) / 256;
-				for (int rowNum = 0; rowNum < sheet.getLastRowNum(); rowNum++) {
+				for (int rowNum = 0; rowNum < sheet.getLastRowNum()+1; rowNum++) {
 					HSSFRow currentRow;
 					// 当前行未被使用过
 					if (sheet.getRow(rowNum) == null) {
@@ -645,7 +645,7 @@ public class ExcelCPUtils {
 			// 让列宽随着导出的列长自动适应
 			for (int colNum = 0; colNum < columnNum; colNum++) {
 				int columnWidth = sheet.getColumnWidth(colNum) / 256;
-				for (int rowNum = 0; rowNum < sheet.getLastRowNum(); rowNum++) {
+				for (int rowNum = 0; rowNum < sheet.getLastRowNum()+1; rowNum++) {
 					HSSFRow currentRow;
 					// 当前行未被使用过
 					if (sheet.getRow(rowNum) == null) {

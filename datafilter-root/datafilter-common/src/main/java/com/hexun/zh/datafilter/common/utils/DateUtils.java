@@ -863,10 +863,10 @@ public class DateUtils {
     	
     }
    public static void main(String[] args) {
-	   System.out.println(CPgetExpiryDate("2020-0w6-*36=963852741"));
+	   System.out.println(CPgetExpiryDate("2019-11-18"));
 	   
-	   String s = "2020123456789";
-	   System.out.println(s.substring(0,8));
+//	   String s = "2019-11-18";
+//	   System.out.println(s.substring(0,8));
 }
 
  /*   public static void main(String[] args) {
