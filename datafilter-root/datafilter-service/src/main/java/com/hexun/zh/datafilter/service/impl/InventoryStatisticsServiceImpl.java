@@ -127,7 +127,7 @@ public  class  InventoryStatisticsServiceImpl implements InventoryStatisticsServ
 //            return BaseResponse.getSuccessByEnCode("结束时间为空");
 //        }
 
-        List<Map<String,String>> list = inventory_statisticsMapper.findInventoryStatisticsDistinctFileName(startTime,endTime);
+        List<Map<String,String>> list = inventory_statisticsMapper.findInventoryStatisticsDistinctFileName();
         log.info(" **  根据时间段查询查询 不重样的文件名称，查询到结果：{}", JSON.toJSONString(list));
         
 //        Map<String,String> resultMap = null;
@@ -265,15 +265,28 @@ public  class  InventoryStatisticsServiceImpl implements InventoryStatisticsServ
 		  	             			
 		  	             			String productCoding = productList.get(0).get("productCoding").toString();
 		  	             			String productName = productList.get(0).get("productName").toString();
+		  	             			String basePrice = productList.get(0).get("basePrice").toString();
+		  	             			String salePrice = productList.get(0).get("salePrice").toString();
 		  	             			excelProduct = new ArrayList<>();
 		  	             			excelProduct.add(serialNumber.toString());
 		  	             			excelProduct.add(productCoding);
 		  	             			excelProduct.add(productName);
+		  	             			excelProduct.add(basePrice);
+		  	             			excelProduct.add(salePrice);
 		  	             		}
+		  	             		int productInventoryNum = 0;
 		  	                 for(Map<String,Object> mapProductInfo : productList){
 		  	                	String productCoding = mapProductInfo.get("productCoding").toString();
 		  	                	String productName = mapProductInfo.get("productName").toString();
 		  	                	String productInventory = mapProductInfo.get("productInventory").toString();
+		  	                	int productInventoryStr = 0;
+		  	                	try {
+		  	                		productInventoryStr = Integer.parseInt(productInventory);
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+		  	                	//累加数量
+		  	                	productInventoryNum = productInventoryNum + productInventoryStr;
 		  	                	String productEffectiveTimeDec = mapProductInfo.get("productEffectiveTimeDec").toString();
 		  	                	System.out.println("productCoding:"+productCoding);
 		  	                	System.out.println("productName:"+productName);
@@ -284,6 +297,8 @@ public  class  InventoryStatisticsServiceImpl implements InventoryStatisticsServ
 		  	                	excelProduct.add(productEffectiveTimeDec);
 		  	                	
 				  	      	 }
+		  	                 System.out.println("累加数量为："+productInventoryNum);
+		  	                 excelProduct.add(5,(0==productInventoryNum)?"无":productInventoryNum+"");
 		  	                 if(excelProduct.size() > titleNum) {
 		  	                	 titleNum = excelProduct.size();
 		  	                 }
@@ -294,8 +309,11 @@ public  class  InventoryStatisticsServiceImpl implements InventoryStatisticsServ
 		        	   titleNameList.add("编码");
 		        	   titleNameList.add("条码");
 		        	   titleNameList.add("名称");
-		        	   for(int i=3;i<titleNum;i++) {
-		        		   if(i%2==1) {
+		        	   titleNameList.add("进货价");
+		        	   titleNameList.add("市场价");
+		        	   titleNameList.add("总数量");
+		        	   for(int i=6;i<titleNum;i++) {
+		        		   if(i%2==0) {
 		        			   titleNameList.add("数量");
 		        		   }else {
 		        			   titleNameList.add("效期");

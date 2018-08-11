@@ -146,16 +146,16 @@
 		fileName fileName
 	FROM
 		inventory_statistics 
-	WHERE
-		1=1 
-	    <if test="startTime != null" >
-	      AND effectiveTime &gt;= #{startTime}
-	    </if>
-	    <if test="endTime != null" >
-	      AND effectiveTime &lt;= #{endTime}
-	    </if>
-     ORDER BY
-     effectiveTime
+<!-- 	WHERE -->
+<!-- 		1=1  -->
+<!-- 	    <if test="startTime != null" > -->
+<!-- 	      AND effectiveTime &gt;= #{startTime} -->
+<!-- 	    </if> -->
+<!-- 	    <if test="endTime != null" > -->
+<!-- 	      AND effectiveTime &lt;= #{endTime} -->
+<!-- 	    </if> -->
+<!--      ORDER BY -->
+<!--      effectiveTime -->
   </select>
   
   
@@ -175,8 +175,8 @@
 	    <if test="endTime != null" >
 	      AND i.effectiveTime &lt;= #{endTime}
 	    </if>
-     ORDER BY
-    i.effectiveTime
+<!--      ORDER BY -->
+<!--     i.effectiveTime -->
   </select>
   
 	  <select id="findInventoryStatisticsDistinctSerialNumber" resultType="java.util.HashMap" parameterType="java.util.HashMap" >
@@ -198,18 +198,20 @@
 		   <if test="endTime != null" >
 		     AND i.effectiveTime &lt;= #{endTime}
 		   </if>
-		   ORDER BY
-		  i.effectiveTime
+<!-- 		   ORDER BY -->
+<!-- 		  i.effectiveTime -->
 	</select>
 	
     <select id="findInventoryStatisticsBySeri" resultType="java.util.HashMap" parameterType="java.util.HashMap" >
-				SELECT i.productCoding,
-				i.productName,
-				i.productInventory,
-				i.productEffectiveTimeDec
+				SELECT i.productCoding as productCoding,
+				i.productName as productName,
+				IFNULL(p.basePrice,'无')  as basePrice,
+				IFNULL(p.salePrice,'无')  as salePrice,
+				i.productInventory as productInventory,
+				i.productEffectiveTimeDec as productEffectiveTimeDec
 				
 			FROM
-				inventory_statistics i
+				inventory_statistics i LEFT JOIN produce_price p ON i.serialNumber = p.serialNumber
 			WHERE
 				1 = 1
 		   <if test="fileName != null" >

@@ -52,7 +52,7 @@ public interface Inventory_statisticsMapper {
      * @param endTime
      * @return
      */
-    List<Map<String,String>> findInventoryStatisticsDistinctFileName(@Param("startTime") String startTime,@Param("endTime") String endTime);
+    List<Map<String,String>> findInventoryStatisticsDistinctFileName();
     
     
 
