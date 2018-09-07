@@ -4,6 +4,7 @@ import com.hexun.zh.datafilter.common.controller.DefaultBaseController;
 import com.hexun.zh.datafilter.common.page.Page;
 import com.hexun.zh.datafilter.common.utils.BaseResponse;
 import com.hexun.zh.datafilter.common.utils.ExcelCPUtils;
+import com.hexun.zh.datafilter.common.utils.PropertyUtil;
 import com.hexun.zh.datafilter.common.utils.StringUtils;
 import com.hexun.zh.datafilter.entity.Feedback;
 import com.hexun.zh.datafilter.service.DataFilterService;
@@ -154,6 +155,8 @@ public class IndexController extends DefaultBaseController {
 	public 	ModelAndView bi(HttpServletRequest req) {
 		return getModelAndView("bi");
 	}
+	
+
 
 	/**
 	 * 加载全部数据
